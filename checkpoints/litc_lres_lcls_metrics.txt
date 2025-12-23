@@ -1,0 +1,1794 @@
+before epoch 0, AUC: 0.9232673267326733 ACC: 0.8976897689768977
+before epoch 0, AUC: 0.528995756718529 ACC: 0.371994342291372
+before epoch 1, AUC: 0.6495756718528997 ACC: 0.5327675624705328
+before epoch 2, AUC: 0.8875530410183875 ACC: 0.8500707213578501
+before epoch 3, AUC: 0.8928571428571429 ACC: 0.8571428571428571
+before epoch 4, AUC: 0.9027581329561527 ACC: 0.8703441772748703
+before epoch 5, AUC: 0.9094766619519095 ACC: 0.8793022159358793
+before epoch 6, AUC: 0.9151343705799152 ACC: 0.8868458274398868
+before epoch 7, AUC: 0.9250353606789251 ACC: 0.9000471475719001
+before epoch 8, AUC: 0.9218528995756718 ACC: 0.8958038661008958
+before epoch 9, AUC: 0.9214992927864215 ACC: 0.8953323903818954
+before epoch 10, AUC: 0.9236209335219236 ACC: 0.8981612446958982
+before epoch 11, AUC: 0.9009900990099009 ACC: 0.8679867986798679
+before epoch 12, AUC: 0.9052333804809052 ACC: 0.8736445073078737
+before epoch 13, AUC: 0.917963224893918 ACC: 0.8906176331918906
+before epoch 14, AUC: 0.9154879773691654 ACC: 0.8873173031588873
+before epoch 15, AUC: 0.9229137199434229 ACC: 0.8972182932578973
+before epoch 16, AUC: 0.9066478076379068 ACC: 0.8755304101838756
+before epoch 17, AUC: 0.916902404526167 ACC: 0.8892032060348892
+before epoch 0, AUC: 0.6041666666666667 ACC: 0.4722222222222222
+before epoch 0, AUC: 0.6041666666666667 ACC: 0.4722222222222222
+before epoch 0, AUC: 0.5294117647058824 ACC: 0.37254901960784315
+before epoch 0, AUC: 0.676470588235294 ACC: 0.5686274509803921
+before epoch 0, AUC: 0.42647058823529416 ACC: 0.23529411764705882
+before epoch 0, AUC: 0.5776978417266188 ACC: 0.43693045563549154
+before epoch 0, AUC: 0.5776978417266188 ACC: 0.43693045563549154
+before epoch 1, AUC: 0.7312949640287771 ACC: 0.641726618705036
+before epoch 2, AUC: 0.7392086330935251 ACC: 0.6522781774580335
+before epoch 3, AUC: 0.7503597122302158 ACC: 0.6671462829736211
+before epoch 4, AUC: 0.7579136690647482 ACC: 0.6772182254196644
+before epoch 5, AUC: 0.7438848920863309 ACC: 0.6585131894484413
+before epoch 6, AUC: 0.7348920863309354 ACC: 0.6465227817745804
+before epoch 7, AUC: 0.7366906474820143 ACC: 0.6489208633093526
+before epoch 8, AUC: 0.7280575539568346 ACC: 0.637410071942446
+before epoch 9, AUC: 0.7320143884892087 ACC: 0.642685851318945
+before epoch 10, AUC: 0.75 ACC: 0.6666666666666666
+before epoch 11, AUC: 0.724820143884892 ACC: 0.6330935251798561
+before epoch 12, AUC: 0.7442446043165468 ACC: 0.6589928057553958
+before epoch 13, AUC: 0.7478417266187051 ACC: 0.66378896882494
+before epoch 14, AUC: 0.7370503597122302 ACC: 0.6494004796163069
+before epoch 15, AUC: 0.7428057553956835 ACC: 0.657074340527578
+before epoch 16, AUC: 0.7525179856115108 ACC: 0.6700239808153476
+before epoch 17, AUC: 0.735251798561151 ACC: 0.6470023980815347
+before epoch 18, AUC: 0.7348920863309354 ACC: 0.6465227817745803
+before epoch 19, AUC: 0.7258992805755395 ACC: 0.6345323741007195
+before epoch 0, AUC: 0.7564748201438849 ACC: 0.6752997601918465
+before epoch 1, AUC: 0.7888489208633093 ACC: 0.7184652278177458
+before epoch 2, AUC: 0.7953237410071943 ACC: 0.7270983213429256
+before epoch 3, AUC: 0.8010791366906475 ACC: 0.7347721822541967
+before epoch 4, AUC: 0.7931654676258992 ACC: 0.7242206235011991
+before epoch 5, AUC: 0.7953237410071943 ACC: 0.7270983213429256
+before epoch 6, AUC: 0.7838129496402877 ACC: 0.7117505995203837
+before epoch 7, AUC: 0.8003597122302157 ACC: 0.7338129496402879
+before epoch 8, AUC: 0.7942446043165468 ACC: 0.7256594724220624
+before epoch 9, AUC: 0.8003597122302158 ACC: 0.7338129496402879
+before epoch 10, AUC: 0.8039568345323742 ACC: 0.7386091127098321
+before epoch 11, AUC: 0.8032374100719423 ACC: 0.7376498800959232
+before epoch 12, AUC: 0.7924460431654676 ACC: 0.7232613908872902
+before epoch 0, AUC: 0.7514388489208633 ACC: 0.6685851318944844
+before epoch 1, AUC: 0.7805755395683454 ACC: 0.7074340527577938
+before epoch 2, AUC: 0.7823741007194245 ACC: 0.7098321342925659
+before epoch 3, AUC: 0.797841726618705 ACC: 0.7304556354916067
+before epoch 4, AUC: 0.7917266187050359 ACC: 0.7223021582733813
+before epoch 5, AUC: 0.7928057553956835 ACC: 0.7237410071942446
+before epoch 6, AUC: 0.7920863309352517 ACC: 0.7227817745803358
+before epoch 7, AUC: 0.7906474820143885 ACC: 0.7208633093525181
+before epoch 8, AUC: 0.7942446043165468 ACC: 0.7256594724220623
+before epoch 0, AUC: 0.5989208633093526 ACC: 0.4652278177458034
+before epoch 0, AUC: 0.4375 ACC: 0.25
+before epoch 0, AUC: 0.690625 ACC: 0.5875
+before epoch 0, AUC: 0.484375 ACC: 0.3125
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 1, AUC: 0.821875 ACC: 0.7625
+before epoch 2, AUC: 0.821875 ACC: 0.7625
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 1, AUC: 0.821875 ACC: 0.7625
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 1, AUC: 0.821875 ACC: 0.7625
+before epoch 2, AUC: 0.821875 ACC: 0.7625
+before epoch 3, AUC: 0.83125 ACC: 0.775
+before epoch 4, AUC: 0.83125 ACC: 0.775
+before epoch 5, AUC: 0.83125 ACC: 0.775
+before epoch 6, AUC: 0.79375 ACC: 0.725
+before epoch 7, AUC: 0.803125 ACC: 0.7375
+before epoch 8, AUC: 0.821875 ACC: 0.7625
+before epoch 9, AUC: 0.803125 ACC: 0.7375
+before epoch 10, AUC: 0.765625 ACC: 0.6875
+before epoch 11, AUC: 0.784375 ACC: 0.7125
+before epoch 12, AUC: 0.775 ACC: 0.7
+before epoch 13, AUC: 0.784375 ACC: 0.7125
+before epoch 14, AUC: 0.765625 ACC: 0.6875
+before epoch 15, AUC: 0.775 ACC: 0.7
+before epoch 16, AUC: 0.765625 ACC: 0.6875
+before epoch 17, AUC: 0.79375 ACC: 0.725
+before epoch 18, AUC: 0.775 ACC: 0.7
+before epoch 19, AUC: 0.765625 ACC: 0.6875
+before epoch 20, AUC: 0.765625 ACC: 0.6875
+before epoch 21, AUC: 0.765625 ACC: 0.6875
+before epoch 22, AUC: 0.746875 ACC: 0.6625
+before epoch 23, AUC: 0.775 ACC: 0.7
+before epoch 24, AUC: 0.75625 ACC: 0.675
+before epoch 25, AUC: 0.765625 ACC: 0.6875
+before epoch 26, AUC: 0.765625 ACC: 0.6875
+before epoch 27, AUC: 0.765625 ACC: 0.6875
+before epoch 28, AUC: 0.803125 ACC: 0.7375
+before epoch 29, AUC: 0.784375 ACC: 0.7125
+before epoch 30, AUC: 0.746875 ACC: 0.6625
+before epoch 31, AUC: 0.75625 ACC: 0.675
+before epoch 32, AUC: 0.746875 ACC: 0.6625
+before epoch 33, AUC: 0.765625 ACC: 0.6875
+before epoch 34, AUC: 0.784375 ACC: 0.7125
+before epoch 35, AUC: 0.775 ACC: 0.7
+before epoch 36, AUC: 0.746875 ACC: 0.6625
+before epoch 37, AUC: 0.765625 ACC: 0.6875
+before epoch 38, AUC: 0.75625 ACC: 0.675
+before epoch 39, AUC: 0.775 ACC: 0.7
+before epoch 40, AUC: 0.775 ACC: 0.7
+before epoch 41, AUC: 0.746875 ACC: 0.6625
+before epoch 42, AUC: 0.775 ACC: 0.7
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 1, AUC: 0.821875 ACC: 0.7625
+before epoch 2, AUC: 0.821875 ACC: 0.7625
+before epoch 3, AUC: 0.83125 ACC: 0.775
+before epoch 4, AUC: 0.83125 ACC: 0.775
+before epoch 5, AUC: 0.83125 ACC: 0.775
+before epoch 6, AUC: 0.79375 ACC: 0.725
+before epoch 7, AUC: 0.803125 ACC: 0.7375
+before epoch 8, AUC: 0.821875 ACC: 0.7625
+before epoch 9, AUC: 0.775 ACC: 0.7
+before epoch 10, AUC: 0.765625 ACC: 0.6875
+before epoch 11, AUC: 0.775 ACC: 0.7
+before epoch 12, AUC: 0.775 ACC: 0.7
+before epoch 13, AUC: 0.775 ACC: 0.7
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 1, AUC: 0.821875 ACC: 0.7625
+before epoch 2, AUC: 0.821875 ACC: 0.7625
+before epoch 3, AUC: 0.83125 ACC: 0.775
+before epoch 4, AUC: 0.83125 ACC: 0.775
+before epoch 5, AUC: 0.83125 ACC: 0.775
+before epoch 6, AUC: 0.79375 ACC: 0.725
+before epoch 7, AUC: 0.803125 ACC: 0.7375
+before epoch 8, AUC: 0.821875 ACC: 0.7625
+before epoch 9, AUC: 0.775 ACC: 0.7
+before epoch 10, AUC: 0.765625 ACC: 0.6875
+before epoch 11, AUC: 0.775 ACC: 0.7
+before epoch 12, AUC: 0.775 ACC: 0.7
+before epoch 13, AUC: 0.775 ACC: 0.7
+before epoch 14, AUC: 0.775 ACC: 0.7
+before epoch 15, AUC: 0.784375 ACC: 0.7125
+before epoch 16, AUC: 0.775 ACC: 0.7
+before epoch 17, AUC: 0.784375 ACC: 0.7125
+before epoch 18, AUC: 0.784375 ACC: 0.7125
+before epoch 19, AUC: 0.784375 ACC: 0.7125
+before epoch 20, AUC: 0.75625 ACC: 0.675
+before epoch 21, AUC: 0.79375 ACC: 0.725
+before epoch 22, AUC: 0.746875 ACC: 0.6625
+before epoch 23, AUC: 0.784375 ACC: 0.7125
+before epoch 24, AUC: 0.775 ACC: 0.7
+before epoch 25, AUC: 0.775 ACC: 0.7
+before epoch 26, AUC: 0.765625 ACC: 0.6875
+before epoch 27, AUC: 0.784375 ACC: 0.7125
+before epoch 28, AUC: 0.79375 ACC: 0.725
+before epoch 29, AUC: 0.784375 ACC: 0.7125
+before epoch 30, AUC: 0.746875 ACC: 0.6625
+before epoch 31, AUC: 0.775 ACC: 0.7
+before epoch 32, AUC: 0.75625 ACC: 0.675
+before epoch 33, AUC: 0.784375 ACC: 0.7125
+before epoch 34, AUC: 0.775 ACC: 0.7
+before epoch 35, AUC: 0.784375 ACC: 0.7125
+before epoch 36, AUC: 0.75625 ACC: 0.675
+before epoch 37, AUC: 0.765625 ACC: 0.6875
+before epoch 38, AUC: 0.765625 ACC: 0.6875
+before epoch 39, AUC: 0.775 ACC: 0.7
+before epoch 40, AUC: 0.765625 ACC: 0.6875
+before epoch 41, AUC: 0.746875 ACC: 0.6625
+before epoch 42, AUC: 0.79375 ACC: 0.725
+before epoch 43, AUC: 0.765625 ACC: 0.6875
+before epoch 44, AUC: 0.746875 ACC: 0.6625
+before epoch 45, AUC: 0.75625 ACC: 0.675
+before epoch 46, AUC: 0.75625 ACC: 0.675
+before epoch 47, AUC: 0.75625 ACC: 0.675
+before epoch 48, AUC: 0.79375 ACC: 0.725
+before epoch 49, AUC: 0.79375 ACC: 0.725
+before epoch 50, AUC: 0.784375 ACC: 0.7125
+before epoch 51, AUC: 0.765625 ACC: 0.6875
+before epoch 52, AUC: 0.765625 ACC: 0.6875
+before epoch 53, AUC: 0.75625 ACC: 0.675
+before epoch 54, AUC: 0.765625 ACC: 0.6875
+before epoch 55, AUC: 0.75625 ACC: 0.675
+before epoch 56, AUC: 0.765625 ACC: 0.6875
+before epoch 57, AUC: 0.765625 ACC: 0.6875
+before epoch 58, AUC: 0.784375 ACC: 0.7125
+before epoch 59, AUC: 0.765625 ACC: 0.6875
+before epoch 60, AUC: 0.775 ACC: 0.7
+before epoch 61, AUC: 0.775 ACC: 0.7
+before epoch 62, AUC: 0.765625 ACC: 0.6875
+before epoch 63, AUC: 0.765625 ACC: 0.6875
+before epoch 64, AUC: 0.775 ACC: 0.7
+before epoch 65, AUC: 0.765625 ACC: 0.6875
+before epoch 66, AUC: 0.765625 ACC: 0.6875
+before epoch 67, AUC: 0.765625 ACC: 0.6875
+before epoch 68, AUC: 0.765625 ACC: 0.6875
+before epoch 69, AUC: 0.765625 ACC: 0.6875
+before epoch 70, AUC: 0.765625 ACC: 0.6875
+before epoch 71, AUC: 0.775 ACC: 0.7
+before epoch 72, AUC: 0.775 ACC: 0.7
+before epoch 73, AUC: 0.765625 ACC: 0.6875
+before epoch 74, AUC: 0.775 ACC: 0.7
+before epoch 75, AUC: 0.784375 ACC: 0.7125
+before epoch 76, AUC: 0.775 ACC: 0.7
+before epoch 77, AUC: 0.765625 ACC: 0.6875
+before epoch 78, AUC: 0.775 ACC: 0.7
+before epoch 79, AUC: 0.775 ACC: 0.7
+before epoch 80, AUC: 0.784375 ACC: 0.7125
+before epoch 81, AUC: 0.775 ACC: 0.7
+before epoch 82, AUC: 0.775 ACC: 0.7
+before epoch 83, AUC: 0.775 ACC: 0.7
+before epoch 84, AUC: 0.775 ACC: 0.7
+before epoch 85, AUC: 0.775 ACC: 0.7
+before epoch 86, AUC: 0.775 ACC: 0.7
+before epoch 87, AUC: 0.775 ACC: 0.7
+before epoch 88, AUC: 0.775 ACC: 0.7
+before epoch 89, AUC: 0.775 ACC: 0.7
+before epoch 90, AUC: 0.775 ACC: 0.7
+before epoch 91, AUC: 0.775 ACC: 0.7
+before epoch 92, AUC: 0.775 ACC: 0.7
+before epoch 93, AUC: 0.775 ACC: 0.7
+before epoch 94, AUC: 0.775 ACC: 0.7
+before epoch 95, AUC: 0.775 ACC: 0.7
+before epoch 96, AUC: 0.775 ACC: 0.7
+before epoch 97, AUC: 0.775 ACC: 0.7
+before epoch 98, AUC: 0.775 ACC: 0.7
+before epoch 99, AUC: 0.775 ACC: 0.7
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 1, AUC: 0.821875 ACC: 0.7625
+before epoch 2, AUC: 0.821875 ACC: 0.7625
+before epoch 3, AUC: 0.83125 ACC: 0.775
+before epoch 4, AUC: 0.83125 ACC: 0.775
+before epoch 5, AUC: 0.83125 ACC: 0.775
+before epoch 6, AUC: 0.79375 ACC: 0.725
+before epoch 7, AUC: 0.803125 ACC: 0.7375
+before epoch 8, AUC: 0.821875 ACC: 0.7625
+before epoch 9, AUC: 0.775 ACC: 0.7
+before epoch 10, AUC: 0.765625 ACC: 0.6875
+before epoch 11, AUC: 0.775 ACC: 0.7
+before epoch 12, AUC: 0.775 ACC: 0.7
+before epoch 13, AUC: 0.775 ACC: 0.7
+before epoch 14, AUC: 0.775 ACC: 0.7
+before epoch 15, AUC: 0.784375 ACC: 0.7125
+before epoch 16, AUC: 0.775 ACC: 0.7
+before epoch 17, AUC: 0.784375 ACC: 0.7125
+before epoch 18, AUC: 0.784375 ACC: 0.7125
+before epoch 19, AUC: 0.784375 ACC: 0.7125
+before epoch 20, AUC: 0.75625 ACC: 0.675
+before epoch 21, AUC: 0.79375 ACC: 0.725
+before epoch 22, AUC: 0.746875 ACC: 0.6625
+before epoch 23, AUC: 0.784375 ACC: 0.7125
+before epoch 24, AUC: 0.775 ACC: 0.7
+before epoch 25, AUC: 0.775 ACC: 0.7
+before epoch 26, AUC: 0.765625 ACC: 0.6875
+before epoch 27, AUC: 0.784375 ACC: 0.7125
+before epoch 28, AUC: 0.79375 ACC: 0.725
+before epoch 29, AUC: 0.784375 ACC: 0.7125
+before epoch 30, AUC: 0.746875 ACC: 0.6625
+before epoch 31, AUC: 0.775 ACC: 0.7
+before epoch 32, AUC: 0.75625 ACC: 0.675
+before epoch 33, AUC: 0.784375 ACC: 0.7125
+before epoch 34, AUC: 0.775 ACC: 0.7
+before epoch 35, AUC: 0.784375 ACC: 0.7125
+before epoch 36, AUC: 0.75625 ACC: 0.675
+before epoch 37, AUC: 0.765625 ACC: 0.6875
+before epoch 38, AUC: 0.765625 ACC: 0.6875
+before epoch 39, AUC: 0.775 ACC: 0.7
+before epoch 40, AUC: 0.765625 ACC: 0.6875
+before epoch 41, AUC: 0.746875 ACC: 0.6625
+before epoch 42, AUC: 0.79375 ACC: 0.725
+before epoch 43, AUC: 0.765625 ACC: 0.6875
+before epoch 44, AUC: 0.746875 ACC: 0.6625
+before epoch 45, AUC: 0.75625 ACC: 0.675
+before epoch 46, AUC: 0.75625 ACC: 0.675
+before epoch 47, AUC: 0.75625 ACC: 0.675
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 1, AUC: 0.821875 ACC: 0.7625
+before epoch 2, AUC: 0.821875 ACC: 0.7625
+before epoch 3, AUC: 0.83125 ACC: 0.775
+before epoch 4, AUC: 0.83125 ACC: 0.775
+before epoch 5, AUC: 0.83125 ACC: 0.775
+before epoch 6, AUC: 0.79375 ACC: 0.725
+before epoch 7, AUC: 0.803125 ACC: 0.7375
+before epoch 8, AUC: 0.8125 ACC: 0.75
+before epoch 9, AUC: 0.765625 ACC: 0.6875
+before epoch 10, AUC: 0.775 ACC: 0.7
+before epoch 11, AUC: 0.775 ACC: 0.7
+before epoch 12, AUC: 0.775 ACC: 0.7
+before epoch 13, AUC: 0.775 ACC: 0.7
+before epoch 14, AUC: 0.765625 ACC: 0.6875
+before epoch 15, AUC: 0.775 ACC: 0.7
+before epoch 16, AUC: 0.775 ACC: 0.7
+before epoch 17, AUC: 0.775 ACC: 0.7
+before epoch 18, AUC: 0.784375 ACC: 0.7125
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 1, AUC: 0.784375 ACC: 0.7125
+before epoch 2, AUC: 0.821875 ACC: 0.7625
+before epoch 3, AUC: 0.821875 ACC: 0.7625
+before epoch 4, AUC: 0.821875 ACC: 0.7625
+before epoch 5, AUC: 0.83125 ACC: 0.775
+before epoch 6, AUC: 0.83125 ACC: 0.775
+before epoch 7, AUC: 0.784375 ACC: 0.7125
+before epoch 8, AUC: 0.765625 ACC: 0.6875
+before epoch 9, AUC: 0.784375 ACC: 0.7125
+before epoch 10, AUC: 0.765625 ACC: 0.6875
+before epoch 11, AUC: 0.775 ACC: 0.7
+before epoch 12, AUC: 0.821875 ACC: 0.7625
+before epoch 13, AUC: 0.803125 ACC: 0.7375
+before epoch 14, AUC: 0.765625 ACC: 0.6875
+before epoch 15, AUC: 0.79375 ACC: 0.725
+before epoch 16, AUC: 0.784375 ACC: 0.7125
+before epoch 17, AUC: 0.784375 ACC: 0.7125
+before epoch 18, AUC: 0.79375 ACC: 0.725
+before epoch 19, AUC: 0.79375 ACC: 0.725
+before epoch 20, AUC: 0.728125 ACC: 0.6375
+before epoch 21, AUC: 0.784375 ACC: 0.7125
+before epoch 22, AUC: 0.709375 ACC: 0.6125
+before epoch 23, AUC: 0.803125 ACC: 0.7375
+before epoch 24, AUC: 0.775 ACC: 0.7
+before epoch 25, AUC: 0.775 ACC: 0.7
+before epoch 26, AUC: 0.765625 ACC: 0.6875
+before epoch 27, AUC: 0.765625 ACC: 0.6875
+before epoch 28, AUC: 0.803125 ACC: 0.7375
+before epoch 29, AUC: 0.784375 ACC: 0.7125
+before epoch 30, AUC: 0.75625 ACC: 0.675
+before epoch 31, AUC: 0.775 ACC: 0.7
+before epoch 32, AUC: 0.75625 ACC: 0.675
+before epoch 33, AUC: 0.803125 ACC: 0.7375
+before epoch 34, AUC: 0.765625 ACC: 0.6875
+before epoch 35, AUC: 0.775 ACC: 0.7
+before epoch 36, AUC: 0.728125 ACC: 0.6375
+before epoch 37, AUC: 0.728125 ACC: 0.6375
+before epoch 38, AUC: 0.75625 ACC: 0.675
+before epoch 39, AUC: 0.775 ACC: 0.7
+before epoch 40, AUC: 0.765625 ACC: 0.6875
+before epoch 41, AUC: 0.75625 ACC: 0.675
+before epoch 42, AUC: 0.79375 ACC: 0.725
+before epoch 43, AUC: 0.784375 ACC: 0.7125
+before epoch 44, AUC: 0.728125 ACC: 0.6375
+before epoch 45, AUC: 0.728125 ACC: 0.6375
+before epoch 46, AUC: 0.75625 ACC: 0.675
+before epoch 47, AUC: 0.765625 ACC: 0.6875
+before epoch 48, AUC: 0.79375 ACC: 0.725
+before epoch 49, AUC: 0.79375 ACC: 0.725
+before epoch 50, AUC: 0.79375 ACC: 0.725
+before epoch 51, AUC: 0.765625 ACC: 0.6875
+before epoch 52, AUC: 0.775 ACC: 0.7
+before epoch 53, AUC: 0.746875 ACC: 0.6625
+before epoch 54, AUC: 0.746875 ACC: 0.6625
+before epoch 55, AUC: 0.7375 ACC: 0.65
+before epoch 56, AUC: 0.7375 ACC: 0.65
+before epoch 57, AUC: 0.775 ACC: 0.7
+before epoch 58, AUC: 0.775 ACC: 0.7
+before epoch 59, AUC: 0.765625 ACC: 0.6875
+before epoch 60, AUC: 0.75625 ACC: 0.675
+before epoch 61, AUC: 0.765625 ACC: 0.6875
+before epoch 62, AUC: 0.746875 ACC: 0.6625
+before epoch 63, AUC: 0.765625 ACC: 0.6875
+before epoch 64, AUC: 0.75625 ACC: 0.675
+before epoch 65, AUC: 0.7375 ACC: 0.65
+before epoch 66, AUC: 0.75625 ACC: 0.675
+before epoch 67, AUC: 0.765625 ACC: 0.6875
+before epoch 68, AUC: 0.765625 ACC: 0.6875
+before epoch 69, AUC: 0.75625 ACC: 0.675
+before epoch 70, AUC: 0.765625 ACC: 0.6875
+before epoch 71, AUC: 0.75625 ACC: 0.675
+before epoch 72, AUC: 0.75625 ACC: 0.675
+before epoch 73, AUC: 0.75625 ACC: 0.675
+before epoch 74, AUC: 0.75625 ACC: 0.675
+before epoch 75, AUC: 0.75625 ACC: 0.675
+before epoch 76, AUC: 0.765625 ACC: 0.6875
+before epoch 77, AUC: 0.775 ACC: 0.7
+before epoch 78, AUC: 0.75625 ACC: 0.675
+before epoch 79, AUC: 0.75625 ACC: 0.675
+before epoch 80, AUC: 0.75625 ACC: 0.675
+before epoch 81, AUC: 0.75625 ACC: 0.675
+before epoch 82, AUC: 0.765625 ACC: 0.6875
+before epoch 83, AUC: 0.75625 ACC: 0.675
+before epoch 84, AUC: 0.765625 ACC: 0.6875
+before epoch 85, AUC: 0.765625 ACC: 0.6875
+before epoch 86, AUC: 0.775 ACC: 0.7
+before epoch 87, AUC: 0.765625 ACC: 0.6875
+before epoch 88, AUC: 0.765625 ACC: 0.6875
+before epoch 89, AUC: 0.775 ACC: 0.7
+before epoch 90, AUC: 0.765625 ACC: 0.6875
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 1, AUC: 0.690625 ACC: 0.5875
+before epoch 2, AUC: 0.775 ACC: 0.7
+before epoch 3, AUC: 0.821875 ACC: 0.7625
+before epoch 4, AUC: 0.83125 ACC: 0.775
+before epoch 5, AUC: 0.83125 ACC: 0.775
+before epoch 6, AUC: 0.83125 ACC: 0.775
+before epoch 7, AUC: 0.8125 ACC: 0.75
+before epoch 8, AUC: 0.821875 ACC: 0.7625
+before epoch 9, AUC: 0.746875 ACC: 0.6625
+before epoch 10, AUC: 0.765625 ACC: 0.6875
+before epoch 0, AUC: 0.653125 ACC: 0.5375
+before epoch 1, AUC: 0.7 ACC: 0.6
+before epoch 2, AUC: 0.746875 ACC: 0.6625
+before epoch 3, AUC: 0.821875 ACC: 0.7625
+before epoch 4, AUC: 0.821875 ACC: 0.7625
+before epoch 5, AUC: 0.821875 ACC: 0.7625
+before epoch 6, AUC: 0.8125 ACC: 0.75
+before epoch 7, AUC: 0.8125 ACC: 0.75
+before epoch 8, AUC: 0.784375 ACC: 0.7125
+before epoch 9, AUC: 0.765625 ACC: 0.6875
+before epoch 10, AUC: 0.775 ACC: 0.7
+before epoch 11, AUC: 0.75625 ACC: 0.675
+before epoch 12, AUC: 0.784375 ACC: 0.7125
+before epoch 13, AUC: 0.79375 ACC: 0.725
+before epoch 14, AUC: 0.775 ACC: 0.7
+before epoch 15, AUC: 0.784375 ACC: 0.7125
+before epoch 16, AUC: 0.784375 ACC: 0.7125
+before epoch 17, AUC: 0.784375 ACC: 0.7125
+before epoch 18, AUC: 0.784375 ACC: 0.7125
+before epoch 19, AUC: 0.775 ACC: 0.7
+before epoch 20, AUC: 0.765625 ACC: 0.6875
+before epoch 21, AUC: 0.775 ACC: 0.7
+before epoch 22, AUC: 0.765625 ACC: 0.6875
+before epoch 23, AUC: 0.775 ACC: 0.7
+before epoch 24, AUC: 0.765625 ACC: 0.6875
+before epoch 25, AUC: 0.775 ACC: 0.7
+before epoch 26, AUC: 0.784375 ACC: 0.7125
+before epoch 27, AUC: 0.784375 ACC: 0.7125
+before epoch 28, AUC: 0.775 ACC: 0.7
+before epoch 29, AUC: 0.775 ACC: 0.7
+before epoch 30, AUC: 0.79375 ACC: 0.725
+before epoch 31, AUC: 0.79375 ACC: 0.725
+before epoch 32, AUC: 0.765625 ACC: 0.6875
+before epoch 33, AUC: 0.784375 ACC: 0.7125
+before epoch 34, AUC: 0.784375 ACC: 0.7125
+before epoch 35, AUC: 0.775 ACC: 0.7
+before epoch 36, AUC: 0.765625 ACC: 0.6875
+before epoch 37, AUC: 0.784375 ACC: 0.7125
+before epoch 38, AUC: 0.75625 ACC: 0.675
+before epoch 39, AUC: 0.775 ACC: 0.7
+before epoch 40, AUC: 0.784375 ACC: 0.7125
+before epoch 41, AUC: 0.75625 ACC: 0.675
+before epoch 42, AUC: 0.775 ACC: 0.7
+before epoch 43, AUC: 0.765625 ACC: 0.6875
+before epoch 44, AUC: 0.75625 ACC: 0.675
+before epoch 45, AUC: 0.75625 ACC: 0.675
+before epoch 46, AUC: 0.765625 ACC: 0.6875
+before epoch 47, AUC: 0.75625 ACC: 0.675
+before epoch 48, AUC: 0.75625 ACC: 0.675
+before epoch 49, AUC: 0.75625 ACC: 0.675
+before epoch 50, AUC: 0.75625 ACC: 0.675
+before epoch 51, AUC: 0.746875 ACC: 0.6625
+before epoch 52, AUC: 0.75625 ACC: 0.675
+before epoch 53, AUC: 0.75625 ACC: 0.675
+before epoch 54, AUC: 0.746875 ACC: 0.6625
+before epoch 55, AUC: 0.7375 ACC: 0.65
+before epoch 56, AUC: 0.765625 ACC: 0.6875
+before epoch 57, AUC: 0.75625 ACC: 0.675
+before epoch 58, AUC: 0.75625 ACC: 0.675
+before epoch 59, AUC: 0.75625 ACC: 0.675
+before epoch 60, AUC: 0.75625 ACC: 0.675
+before epoch 61, AUC: 0.75625 ACC: 0.675
+before epoch 62, AUC: 0.75625 ACC: 0.675
+before epoch 63, AUC: 0.75625 ACC: 0.675
+before epoch 64, AUC: 0.765625 ACC: 0.6875
+before epoch 65, AUC: 0.75625 ACC: 0.675
+before epoch 66, AUC: 0.75625 ACC: 0.675
+before epoch 67, AUC: 0.746875 ACC: 0.6625
+before epoch 68, AUC: 0.75625 ACC: 0.675
+before epoch 69, AUC: 0.75625 ACC: 0.675
+before epoch 70, AUC: 0.75625 ACC: 0.675
+epoch 0, AUC: 0.653125 ACC: 0.5375
+epoch 0, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 0, AUC: 0.653125 ACC: 0.5375
+epoch 0, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 1, AUC: 0.7 ACC: 0.6
+epoch 1, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 2, AUC: 0.75625 ACC: 0.675
+epoch 2, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 3, AUC: 0.8125 ACC: 0.75
+epoch 3, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 4, AUC: 0.821875 ACC: 0.7625
+epoch 4, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 5, AUC: 0.784375 ACC: 0.7125
+epoch 5, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 6, AUC: 0.821875 ACC: 0.7625
+epoch 6, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 7, AUC: 0.83125 ACC: 0.775
+epoch 7, AUC_Student: 0.8125 ACC_Student: 0.75
+epoch 8, AUC: 0.821875 ACC: 0.7625
+epoch 8, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 9, AUC: 0.784375 ACC: 0.7125
+epoch 9, AUC_Student: 0.8125 ACC_Student: 0.75
+epoch 10, AUC: 0.784375 ACC: 0.7125
+epoch 10, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 11, AUC: 0.746875 ACC: 0.6625
+epoch 11, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 12, AUC: 0.775 ACC: 0.7
+epoch 12, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 13, AUC: 0.75625 ACC: 0.675
+epoch 13, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 14, AUC: 0.775 ACC: 0.7
+epoch 14, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 15, AUC: 0.784375 ACC: 0.7125
+epoch 15, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 16, AUC: 0.765625 ACC: 0.6875
+epoch 16, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 17, AUC: 0.765625 ACC: 0.6875
+epoch 17, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 18, AUC: 0.784375 ACC: 0.7125
+epoch 18, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 19, AUC: 0.775 ACC: 0.7
+epoch 19, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 20, AUC: 0.765625 ACC: 0.6875
+epoch 20, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 21, AUC: 0.775 ACC: 0.7
+epoch 21, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 22, AUC: 0.784375 ACC: 0.7125
+epoch 22, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 23, AUC: 0.775 ACC: 0.7
+epoch 23, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 24, AUC: 0.775 ACC: 0.7
+epoch 24, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 25, AUC: 0.784375 ACC: 0.7125
+epoch 25, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 26, AUC: 0.775 ACC: 0.7
+epoch 26, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 27, AUC: 0.784375 ACC: 0.7125
+epoch 27, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 28, AUC: 0.79375 ACC: 0.725
+epoch 28, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 29, AUC: 0.775 ACC: 0.7
+epoch 29, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 30, AUC: 0.784375 ACC: 0.7125
+epoch 30, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 31, AUC: 0.775 ACC: 0.7
+epoch 31, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 32, AUC: 0.775 ACC: 0.7
+epoch 32, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 33, AUC: 0.775 ACC: 0.7
+epoch 33, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 34, AUC: 0.775 ACC: 0.7
+epoch 34, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 35, AUC: 0.775 ACC: 0.7
+epoch 35, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 36, AUC: 0.75625 ACC: 0.675
+epoch 36, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 37, AUC: 0.746875 ACC: 0.6625
+epoch 37, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 38, AUC: 0.775 ACC: 0.7
+epoch 38, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 39, AUC: 0.775 ACC: 0.7
+epoch 39, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 40, AUC: 0.765625 ACC: 0.6875
+epoch 40, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 41, AUC: 0.746875 ACC: 0.6625
+epoch 41, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 42, AUC: 0.746875 ACC: 0.6625
+epoch 42, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 43, AUC: 0.746875 ACC: 0.6625
+epoch 43, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 44, AUC: 0.746875 ACC: 0.6625
+epoch 44, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 45, AUC: 0.75625 ACC: 0.675
+epoch 45, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 46, AUC: 0.75625 ACC: 0.675
+epoch 46, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 47, AUC: 0.746875 ACC: 0.6625
+epoch 47, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 48, AUC: 0.765625 ACC: 0.6875
+epoch 48, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 49, AUC: 0.75625 ACC: 0.675
+epoch 49, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 50, AUC: 0.746875 ACC: 0.6625
+epoch 50, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 51, AUC: 0.746875 ACC: 0.6625
+epoch 51, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 52, AUC: 0.75625 ACC: 0.675
+epoch 52, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 0, AUC: 0.49375 ACC: 0.325
+epoch 0, AUC_Student: 0.446875 ACC_Student: 0.2625
+epoch 0, AUC: 0.49375 ACC: 0.325
+epoch 0, AUC_Student: 0.446875 ACC_Student: 0.2625
+epoch 0, AUC: 0.49375 ACC: 0.325
+epoch 0, AUC_Student: 0.446875 ACC_Student: 0.2625
+epoch 0, AUC: 0.49375 ACC: 0.325
+epoch 0, AUC_Student: 0.446875 ACC_Student: 0.2625
+epoch 1, AUC: 0.83125 ACC: 0.775
+epoch 1, AUC_Student: 0.446875 ACC_Student: 0.2625
+epoch 2, AUC: 0.821875 ACC: 0.7625
+epoch 2, AUC_Student: 0.540625 ACC_Student: 0.3875
+epoch 3, AUC: 0.821875 ACC: 0.7625
+epoch 3, AUC_Student: 0.64375 ACC_Student: 0.525
+epoch 4, AUC: 0.83125 ACC: 0.775
+epoch 4, AUC_Student: 0.7375 ACC_Student: 0.65
+epoch 5, AUC: 0.83125 ACC: 0.775
+epoch 5, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 6, AUC: 0.79375 ACC: 0.725
+epoch 6, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 7, AUC: 0.765625 ACC: 0.6875
+epoch 7, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 8, AUC: 0.765625 ACC: 0.6875
+epoch 8, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 9, AUC: 0.75625 ACC: 0.675
+epoch 9, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 10, AUC: 0.75625 ACC: 0.675
+epoch 10, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 11, AUC: 0.75625 ACC: 0.675
+epoch 11, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 12, AUC: 0.79375 ACC: 0.725
+epoch 12, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 13, AUC: 0.79375 ACC: 0.725
+epoch 13, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 14, AUC: 0.71875 ACC: 0.625
+epoch 14, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 15, AUC: 0.71875 ACC: 0.625
+epoch 15, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 16, AUC: 0.821875 ACC: 0.7625
+epoch 16, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 17, AUC: 0.803125 ACC: 0.7375
+epoch 17, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 18, AUC: 0.784375 ACC: 0.7125
+epoch 18, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 19, AUC: 0.79375 ACC: 0.725
+epoch 19, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 20, AUC: 0.79375 ACC: 0.725
+epoch 20, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 21, AUC: 0.775 ACC: 0.7
+epoch 21, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 22, AUC: 0.784375 ACC: 0.7125
+epoch 22, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 23, AUC: 0.746875 ACC: 0.6625
+epoch 23, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 24, AUC: 0.746875 ACC: 0.6625
+epoch 24, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 25, AUC: 0.784375 ACC: 0.7125
+epoch 25, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 26, AUC: 0.75625 ACC: 0.675
+epoch 26, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 27, AUC: 0.775 ACC: 0.7
+epoch 27, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 28, AUC: 0.765625 ACC: 0.6875
+epoch 28, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 29, AUC: 0.784375 ACC: 0.7125
+epoch 29, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 30, AUC: 0.775 ACC: 0.7
+epoch 30, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 31, AUC: 0.775 ACC: 0.7
+epoch 31, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 32, AUC: 0.75625 ACC: 0.675
+epoch 32, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 33, AUC: 0.7375 ACC: 0.65
+epoch 33, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 34, AUC: 0.75625 ACC: 0.675
+epoch 34, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 35, AUC: 0.75625 ACC: 0.675
+epoch 35, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 36, AUC: 0.775 ACC: 0.7
+epoch 36, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 37, AUC: 0.765625 ACC: 0.6875
+epoch 37, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 38, AUC: 0.775 ACC: 0.7
+epoch 38, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 39, AUC: 0.746875 ACC: 0.6625
+epoch 39, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 40, AUC: 0.775 ACC: 0.7
+epoch 40, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 41, AUC: 0.775 ACC: 0.7
+epoch 41, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 42, AUC: 0.765625 ACC: 0.6875
+epoch 42, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 43, AUC: 0.775 ACC: 0.7
+epoch 43, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 44, AUC: 0.79375 ACC: 0.725
+epoch 44, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 45, AUC: 0.775 ACC: 0.7
+epoch 45, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 46, AUC: 0.775 ACC: 0.7
+epoch 46, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 47, AUC: 0.75625 ACC: 0.675
+epoch 47, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 48, AUC: 0.775 ACC: 0.7
+epoch 48, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 49, AUC: 0.775 ACC: 0.7
+epoch 49, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 50, AUC: 0.784375 ACC: 0.7125
+epoch 50, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 51, AUC: 0.784375 ACC: 0.7125
+epoch 51, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 52, AUC: 0.775 ACC: 0.7
+epoch 52, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 53, AUC: 0.775 ACC: 0.7
+epoch 53, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 54, AUC: 0.784375 ACC: 0.7125
+epoch 54, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 55, AUC: 0.784375 ACC: 0.7125
+epoch 55, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 56, AUC: 0.775 ACC: 0.7
+epoch 56, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 57, AUC: 0.784375 ACC: 0.7125
+epoch 57, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 58, AUC: 0.784375 ACC: 0.7125
+epoch 58, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 59, AUC: 0.79375 ACC: 0.725
+epoch 59, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 60, AUC: 0.784375 ACC: 0.7125
+epoch 60, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 61, AUC: 0.784375 ACC: 0.7125
+epoch 61, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 62, AUC: 0.784375 ACC: 0.7125
+epoch 62, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 63, AUC: 0.79375 ACC: 0.725
+epoch 63, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 64, AUC: 0.784375 ACC: 0.7125
+epoch 64, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 65, AUC: 0.765625 ACC: 0.6875
+epoch 65, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 66, AUC: 0.784375 ACC: 0.7125
+epoch 66, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 67, AUC: 0.775 ACC: 0.7
+epoch 67, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 68, AUC: 0.765625 ACC: 0.6875
+epoch 68, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 69, AUC: 0.79375 ACC: 0.725
+epoch 69, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 70, AUC: 0.775 ACC: 0.7
+epoch 70, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 71, AUC: 0.79375 ACC: 0.725
+epoch 71, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 72, AUC: 0.784375 ACC: 0.7125
+epoch 72, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 73, AUC: 0.79375 ACC: 0.725
+epoch 73, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 74, AUC: 0.775 ACC: 0.7
+epoch 74, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 75, AUC: 0.784375 ACC: 0.7125
+epoch 75, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 76, AUC: 0.775 ACC: 0.7
+epoch 76, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 77, AUC: 0.775 ACC: 0.7
+epoch 77, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 78, AUC: 0.775 ACC: 0.7
+epoch 78, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 79, AUC: 0.784375 ACC: 0.7125
+epoch 79, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 80, AUC: 0.784375 ACC: 0.7125
+epoch 80, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 81, AUC: 0.784375 ACC: 0.7125
+epoch 81, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 82, AUC: 0.784375 ACC: 0.7125
+epoch 82, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 83, AUC: 0.784375 ACC: 0.7125
+epoch 83, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 84, AUC: 0.784375 ACC: 0.7125
+epoch 84, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 85, AUC: 0.775 ACC: 0.7
+epoch 85, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 86, AUC: 0.784375 ACC: 0.7125
+epoch 86, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 87, AUC: 0.784375 ACC: 0.7125
+epoch 87, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 88, AUC: 0.775 ACC: 0.7
+epoch 88, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 89, AUC: 0.775 ACC: 0.7
+epoch 89, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 90, AUC: 0.775 ACC: 0.7
+epoch 90, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 91, AUC: 0.775 ACC: 0.7
+epoch 91, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 92, AUC: 0.775 ACC: 0.7
+epoch 92, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 93, AUC: 0.775 ACC: 0.7
+epoch 93, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 94, AUC: 0.784375 ACC: 0.7125
+epoch 94, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 95, AUC: 0.775 ACC: 0.7
+epoch 95, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 96, AUC: 0.775 ACC: 0.7
+epoch 96, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 97, AUC: 0.775 ACC: 0.7
+epoch 97, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 98, AUC: 0.775 ACC: 0.7
+epoch 98, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 99, AUC: 0.775 ACC: 0.7
+epoch 99, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 0, AUC: 0.465625 ACC: 0.2875
+epoch 0, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 1, AUC: 0.728125 ACC: 0.6375
+epoch 1, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 2, AUC: 0.821875 ACC: 0.7625
+epoch 2, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 3, AUC: 0.821875 ACC: 0.7625
+epoch 3, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 4, AUC: 0.821875 ACC: 0.7625
+epoch 4, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 5, AUC: 0.803125 ACC: 0.7375
+epoch 5, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 6, AUC: 0.821875 ACC: 0.7625
+epoch 6, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 7, AUC: 0.83125 ACC: 0.775
+epoch 7, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 8, AUC: 0.79375 ACC: 0.725
+epoch 8, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 9, AUC: 0.79375 ACC: 0.725
+epoch 9, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 10, AUC: 0.79375 ACC: 0.725
+epoch 10, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 11, AUC: 0.765625 ACC: 0.6875
+epoch 11, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 12, AUC: 0.775 ACC: 0.7
+epoch 12, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 13, AUC: 0.821875 ACC: 0.7625
+epoch 13, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 14, AUC: 0.8125 ACC: 0.75
+epoch 14, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 15, AUC: 0.75625 ACC: 0.675
+epoch 15, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 16, AUC: 0.79375 ACC: 0.725
+epoch 16, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 17, AUC: 0.784375 ACC: 0.7125
+epoch 17, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 18, AUC: 0.75625 ACC: 0.675
+epoch 18, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 19, AUC: 0.775 ACC: 0.7
+epoch 19, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 0, AUC: 0.465625 ACC: 0.2875
+epoch 0, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 1, AUC: 0.7 ACC: 0.6
+epoch 1, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 2, AUC: 0.821875 ACC: 0.7625
+epoch 2, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 3, AUC: 0.821875 ACC: 0.7625
+epoch 3, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 4, AUC: 0.821875 ACC: 0.7625
+epoch 4, AUC_Student: 0.821875 ACC_Student: 0.7625
+epoch 5, AUC: 0.803125 ACC: 0.7375
+epoch 5, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 6, AUC: 0.8125 ACC: 0.75
+epoch 6, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 7, AUC: 0.821875 ACC: 0.7625
+epoch 7, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 8, AUC: 0.784375 ACC: 0.7125
+epoch 8, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 9, AUC: 0.784375 ACC: 0.7125
+epoch 9, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 10, AUC: 0.784375 ACC: 0.7125
+epoch 10, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 11, AUC: 0.775 ACC: 0.7
+epoch 11, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 12, AUC: 0.775 ACC: 0.7
+epoch 12, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 13, AUC: 0.784375 ACC: 0.7125
+epoch 13, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 14, AUC: 0.821875 ACC: 0.7625
+epoch 14, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 15, AUC: 0.79375 ACC: 0.725
+epoch 15, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 16, AUC: 0.803125 ACC: 0.7375
+epoch 16, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 17, AUC: 0.803125 ACC: 0.7375
+epoch 17, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 18, AUC: 0.75625 ACC: 0.675
+epoch 18, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 19, AUC: 0.803125 ACC: 0.7375
+epoch 19, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 20, AUC: 0.79375 ACC: 0.725
+epoch 20, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 21, AUC: 0.775 ACC: 0.7
+epoch 21, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 22, AUC: 0.803125 ACC: 0.7375
+epoch 22, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 23, AUC: 0.784375 ACC: 0.7125
+epoch 23, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 24, AUC: 0.765625 ACC: 0.6875
+epoch 24, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 25, AUC: 0.79375 ACC: 0.725
+epoch 25, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 26, AUC: 0.784375 ACC: 0.7125
+epoch 26, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 27, AUC: 0.75625 ACC: 0.675
+epoch 27, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 28, AUC: 0.784375 ACC: 0.7125
+epoch 28, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 29, AUC: 0.765625 ACC: 0.6875
+epoch 29, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 30, AUC: 0.803125 ACC: 0.7375
+epoch 30, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 31, AUC: 0.765625 ACC: 0.6875
+epoch 31, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 32, AUC: 0.79375 ACC: 0.725
+epoch 32, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 33, AUC: 0.765625 ACC: 0.6875
+epoch 33, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 34, AUC: 0.784375 ACC: 0.7125
+epoch 34, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 35, AUC: 0.784375 ACC: 0.7125
+epoch 35, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 36, AUC: 0.784375 ACC: 0.7125
+epoch 36, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 37, AUC: 0.784375 ACC: 0.7125
+epoch 37, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 38, AUC: 0.79375 ACC: 0.725
+epoch 38, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 39, AUC: 0.784375 ACC: 0.7125
+epoch 39, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 40, AUC: 0.784375 ACC: 0.7125
+epoch 40, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 41, AUC: 0.79375 ACC: 0.725
+epoch 41, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 42, AUC: 0.784375 ACC: 0.7125
+epoch 42, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 43, AUC: 0.784375 ACC: 0.7125
+epoch 43, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 44, AUC: 0.79375 ACC: 0.725
+epoch 44, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 45, AUC: 0.803125 ACC: 0.7375
+epoch 45, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 46, AUC: 0.803125 ACC: 0.7375
+epoch 46, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 47, AUC: 0.79375 ACC: 0.725
+epoch 47, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 48, AUC: 0.784375 ACC: 0.7125
+epoch 48, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 49, AUC: 0.803125 ACC: 0.7375
+epoch 49, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 50, AUC: 0.784375 ACC: 0.7125
+epoch 50, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 51, AUC: 0.775 ACC: 0.7
+epoch 51, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 52, AUC: 0.775 ACC: 0.7
+epoch 52, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 53, AUC: 0.784375 ACC: 0.7125
+epoch 53, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 54, AUC: 0.775 ACC: 0.7
+epoch 54, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 55, AUC: 0.79375 ACC: 0.725
+epoch 55, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 56, AUC: 0.775 ACC: 0.7
+epoch 56, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 57, AUC: 0.79375 ACC: 0.725
+epoch 57, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 58, AUC: 0.784375 ACC: 0.7125
+epoch 58, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 59, AUC: 0.784375 ACC: 0.7125
+epoch 59, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 60, AUC: 0.784375 ACC: 0.7125
+epoch 60, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 61, AUC: 0.775 ACC: 0.7
+epoch 61, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 62, AUC: 0.784375 ACC: 0.7125
+epoch 62, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 63, AUC: 0.775 ACC: 0.7
+epoch 63, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 64, AUC: 0.784375 ACC: 0.7125
+epoch 64, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 65, AUC: 0.775 ACC: 0.7
+epoch 65, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 66, AUC: 0.784375 ACC: 0.7125
+epoch 66, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 67, AUC: 0.775 ACC: 0.7
+epoch 67, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 68, AUC: 0.784375 ACC: 0.7125
+epoch 68, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 69, AUC: 0.775 ACC: 0.7
+epoch 69, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 70, AUC: 0.775 ACC: 0.7
+epoch 70, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 71, AUC: 0.775 ACC: 0.7
+epoch 71, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 72, AUC: 0.775 ACC: 0.7
+epoch 72, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 73, AUC: 0.775 ACC: 0.7
+epoch 73, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 74, AUC: 0.784375 ACC: 0.7125
+epoch 74, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 75, AUC: 0.775 ACC: 0.7
+epoch 75, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 76, AUC: 0.775 ACC: 0.7
+epoch 76, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 77, AUC: 0.775 ACC: 0.7
+epoch 77, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 78, AUC: 0.775 ACC: 0.7
+epoch 78, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 79, AUC: 0.784375 ACC: 0.7125
+epoch 79, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 80, AUC: 0.775 ACC: 0.7
+epoch 80, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 81, AUC: 0.775 ACC: 0.7
+epoch 81, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 82, AUC: 0.775 ACC: 0.7
+epoch 82, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 83, AUC: 0.775 ACC: 0.7
+epoch 83, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 84, AUC: 0.775 ACC: 0.7
+epoch 84, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 85, AUC: 0.775 ACC: 0.7
+epoch 85, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 86, AUC: 0.784375 ACC: 0.7125
+epoch 86, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 87, AUC: 0.775 ACC: 0.7
+epoch 87, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 88, AUC: 0.775 ACC: 0.7
+epoch 88, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 89, AUC: 0.775 ACC: 0.7
+epoch 89, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 90, AUC: 0.775 ACC: 0.7
+epoch 90, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 91, AUC: 0.775 ACC: 0.7
+epoch 91, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 92, AUC: 0.775 ACC: 0.7
+epoch 92, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 93, AUC: 0.775 ACC: 0.7
+epoch 93, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 94, AUC: 0.775 ACC: 0.7
+epoch 94, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 95, AUC: 0.775 ACC: 0.7
+epoch 95, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 96, AUC: 0.775 ACC: 0.7
+epoch 96, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 97, AUC: 0.775 ACC: 0.7
+epoch 97, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 98, AUC: 0.775 ACC: 0.7
+epoch 98, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 99, AUC: 0.775 ACC: 0.7
+epoch 99, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 0, AUC: 0.475 ACC: 0.3
+epoch 0, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 1, AUC: 0.540625 ACC: 0.3875
+epoch 1, AUC_Student: 0.71875 ACC_Student: 0.625
+epoch 2, AUC: 0.803125 ACC: 0.7375
+epoch 2, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 3, AUC: 0.821875 ACC: 0.7625
+epoch 3, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 4, AUC: 0.803125 ACC: 0.7375
+epoch 4, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 5, AUC: 0.821875 ACC: 0.7625
+epoch 5, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 6, AUC: 0.79375 ACC: 0.725
+epoch 6, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 7, AUC: 0.8125 ACC: 0.75
+epoch 7, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 8, AUC: 0.821875 ACC: 0.7625
+epoch 8, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 9, AUC: 0.784375 ACC: 0.7125
+epoch 9, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 10, AUC: 0.784375 ACC: 0.7125
+epoch 10, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 11, AUC: 0.75625 ACC: 0.675
+epoch 11, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 12, AUC: 0.775 ACC: 0.7
+epoch 12, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 13, AUC: 0.775 ACC: 0.7
+epoch 13, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 14, AUC: 0.79375 ACC: 0.725
+epoch 14, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 15, AUC: 0.784375 ACC: 0.7125
+epoch 15, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 16, AUC: 0.79375 ACC: 0.725
+epoch 16, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 17, AUC: 0.79375 ACC: 0.725
+epoch 17, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 18, AUC: 0.75625 ACC: 0.675
+epoch 18, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 19, AUC: 0.79375 ACC: 0.725
+epoch 19, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 20, AUC: 0.79375 ACC: 0.725
+epoch 20, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 21, AUC: 0.79375 ACC: 0.725
+epoch 21, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 22, AUC: 0.775 ACC: 0.7
+epoch 22, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 23, AUC: 0.79375 ACC: 0.725
+epoch 23, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 24, AUC: 0.765625 ACC: 0.6875
+epoch 24, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 25, AUC: 0.784375 ACC: 0.7125
+epoch 25, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 26, AUC: 0.775 ACC: 0.7
+epoch 26, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 27, AUC: 0.746875 ACC: 0.6625
+epoch 27, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 28, AUC: 0.784375 ACC: 0.7125
+epoch 28, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 29, AUC: 0.75625 ACC: 0.675
+epoch 29, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 30, AUC: 0.75625 ACC: 0.675
+epoch 30, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 31, AUC: 0.784375 ACC: 0.7125
+epoch 31, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 32, AUC: 0.79375 ACC: 0.725
+epoch 32, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 33, AUC: 0.79375 ACC: 0.725
+epoch 33, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 34, AUC: 0.79375 ACC: 0.725
+epoch 34, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 35, AUC: 0.784375 ACC: 0.7125
+epoch 35, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 36, AUC: 0.784375 ACC: 0.7125
+epoch 36, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 37, AUC: 0.79375 ACC: 0.725
+epoch 37, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 38, AUC: 0.79375 ACC: 0.725
+epoch 38, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 39, AUC: 0.803125 ACC: 0.7375
+epoch 39, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 40, AUC: 0.784375 ACC: 0.7125
+epoch 40, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 41, AUC: 0.79375 ACC: 0.725
+epoch 41, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 42, AUC: 0.79375 ACC: 0.725
+epoch 42, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 43, AUC: 0.803125 ACC: 0.7375
+epoch 43, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 44, AUC: 0.803125 ACC: 0.7375
+epoch 44, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 45, AUC: 0.803125 ACC: 0.7375
+epoch 45, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 46, AUC: 0.803125 ACC: 0.7375
+epoch 46, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 47, AUC: 0.79375 ACC: 0.725
+epoch 47, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 48, AUC: 0.803125 ACC: 0.7375
+epoch 48, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 49, AUC: 0.803125 ACC: 0.7375
+epoch 49, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 50, AUC: 0.79375 ACC: 0.725
+epoch 50, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 51, AUC: 0.79375 ACC: 0.725
+epoch 51, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 52, AUC: 0.79375 ACC: 0.725
+epoch 52, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 53, AUC: 0.803125 ACC: 0.7375
+epoch 53, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 54, AUC: 0.775 ACC: 0.7
+epoch 54, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 55, AUC: 0.8125 ACC: 0.75
+epoch 55, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 56, AUC: 0.79375 ACC: 0.725
+epoch 56, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 57, AUC: 0.803125 ACC: 0.7375
+epoch 57, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 58, AUC: 0.784375 ACC: 0.7125
+epoch 58, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 59, AUC: 0.8125 ACC: 0.75
+epoch 59, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 60, AUC: 0.8125 ACC: 0.75
+epoch 60, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 61, AUC: 0.79375 ACC: 0.725
+epoch 61, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 62, AUC: 0.803125 ACC: 0.7375
+epoch 62, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 63, AUC: 0.8125 ACC: 0.75
+epoch 63, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 64, AUC: 0.8125 ACC: 0.75
+epoch 64, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 65, AUC: 0.79375 ACC: 0.725
+epoch 65, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 66, AUC: 0.803125 ACC: 0.7375
+epoch 66, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 67, AUC: 0.79375 ACC: 0.725
+epoch 67, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 68, AUC: 0.79375 ACC: 0.725
+epoch 68, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 69, AUC: 0.784375 ACC: 0.7125
+epoch 69, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 70, AUC: 0.79375 ACC: 0.725
+epoch 70, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 71, AUC: 0.79375 ACC: 0.725
+epoch 71, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 72, AUC: 0.784375 ACC: 0.7125
+epoch 72, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 73, AUC: 0.79375 ACC: 0.725
+epoch 73, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 74, AUC: 0.8125 ACC: 0.75
+epoch 74, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 75, AUC: 0.79375 ACC: 0.725
+epoch 75, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 76, AUC: 0.784375 ACC: 0.7125
+epoch 76, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 77, AUC: 0.784375 ACC: 0.7125
+epoch 77, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 78, AUC: 0.775 ACC: 0.7
+epoch 78, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 79, AUC: 0.803125 ACC: 0.7375
+epoch 79, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 80, AUC: 0.784375 ACC: 0.7125
+epoch 80, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 81, AUC: 0.784375 ACC: 0.7125
+epoch 81, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 82, AUC: 0.775 ACC: 0.7
+epoch 82, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 83, AUC: 0.784375 ACC: 0.7125
+epoch 83, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 84, AUC: 0.784375 ACC: 0.7125
+epoch 84, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 85, AUC: 0.784375 ACC: 0.7125
+epoch 85, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 86, AUC: 0.803125 ACC: 0.7375
+epoch 86, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 87, AUC: 0.784375 ACC: 0.7125
+epoch 87, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 88, AUC: 0.784375 ACC: 0.7125
+epoch 88, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 89, AUC: 0.784375 ACC: 0.7125
+epoch 89, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 90, AUC: 0.784375 ACC: 0.7125
+epoch 90, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 91, AUC: 0.784375 ACC: 0.7125
+epoch 91, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 92, AUC: 0.784375 ACC: 0.7125
+epoch 92, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 93, AUC: 0.784375 ACC: 0.7125
+epoch 93, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 94, AUC: 0.784375 ACC: 0.7125
+epoch 94, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 95, AUC: 0.784375 ACC: 0.7125
+epoch 95, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 96, AUC: 0.784375 ACC: 0.7125
+epoch 96, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 97, AUC: 0.784375 ACC: 0.7125
+epoch 97, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 98, AUC: 0.784375 ACC: 0.7125
+epoch 98, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 99, AUC: 0.784375 ACC: 0.7125
+epoch 99, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 0, AUC: 0.465625 ACC: 0.2875
+epoch 0, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 0, AUC: 0.465625 ACC: 0.2875
+epoch 0, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 0, AUC: 0.465625 ACC: 0.2875
+epoch 0, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 1, AUC: 0.75625 ACC: 0.675
+epoch 1, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 2, AUC: 0.821875 ACC: 0.7625
+epoch 2, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 3, AUC: 0.821875 ACC: 0.7625
+epoch 3, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 4, AUC: 0.821875 ACC: 0.7625
+epoch 4, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 5, AUC: 0.821875 ACC: 0.7625
+epoch 5, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 6, AUC: 0.79375 ACC: 0.725
+epoch 6, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 7, AUC: 0.765625 ACC: 0.6875
+epoch 7, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 8, AUC: 0.803125 ACC: 0.7375
+epoch 8, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 9, AUC: 0.746875 ACC: 0.6625
+epoch 9, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 10, AUC: 0.746875 ACC: 0.6625
+epoch 10, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 11, AUC: 0.784375 ACC: 0.7125
+epoch 11, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 12, AUC: 0.784375 ACC: 0.7125
+epoch 12, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 13, AUC: 0.765625 ACC: 0.6875
+epoch 13, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 14, AUC: 0.775 ACC: 0.7
+epoch 14, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 15, AUC: 0.775 ACC: 0.7
+epoch 15, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 16, AUC: 0.803125 ACC: 0.7375
+epoch 16, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 17, AUC: 0.765625 ACC: 0.6875
+epoch 17, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 18, AUC: 0.784375 ACC: 0.7125
+epoch 18, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 19, AUC: 0.775 ACC: 0.7
+epoch 19, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 20, AUC: 0.75625 ACC: 0.675
+epoch 20, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 21, AUC: 0.784375 ACC: 0.7125
+epoch 21, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 22, AUC: 0.775 ACC: 0.7
+epoch 22, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 23, AUC: 0.784375 ACC: 0.7125
+epoch 23, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 24, AUC: 0.775 ACC: 0.7
+epoch 24, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 25, AUC: 0.784375 ACC: 0.7125
+epoch 25, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 26, AUC: 0.775 ACC: 0.7
+epoch 26, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 27, AUC: 0.784375 ACC: 0.7125
+epoch 27, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 28, AUC: 0.75625 ACC: 0.675
+epoch 28, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 29, AUC: 0.79375 ACC: 0.725
+epoch 29, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 30, AUC: 0.784375 ACC: 0.7125
+epoch 30, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 31, AUC: 0.765625 ACC: 0.6875
+epoch 31, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 32, AUC: 0.784375 ACC: 0.7125
+epoch 32, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 33, AUC: 0.784375 ACC: 0.7125
+epoch 33, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 34, AUC: 0.765625 ACC: 0.6875
+epoch 34, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 35, AUC: 0.775 ACC: 0.7
+epoch 35, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 36, AUC: 0.775 ACC: 0.7
+epoch 36, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 37, AUC: 0.784375 ACC: 0.7125
+epoch 37, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 38, AUC: 0.79375 ACC: 0.725
+epoch 38, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 39, AUC: 0.765625 ACC: 0.6875
+epoch 39, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 40, AUC: 0.784375 ACC: 0.7125
+epoch 40, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 41, AUC: 0.775 ACC: 0.7
+epoch 41, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 42, AUC: 0.775 ACC: 0.7
+epoch 42, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 43, AUC: 0.765625 ACC: 0.6875
+epoch 43, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 44, AUC: 0.784375 ACC: 0.7125
+epoch 44, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 45, AUC: 0.775 ACC: 0.7
+epoch 45, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 46, AUC: 0.775 ACC: 0.7
+epoch 46, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 47, AUC: 0.784375 ACC: 0.7125
+epoch 47, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 48, AUC: 0.8125 ACC: 0.75
+epoch 48, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 49, AUC: 0.775 ACC: 0.7
+epoch 49, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 50, AUC: 0.784375 ACC: 0.7125
+epoch 50, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 51, AUC: 0.803125 ACC: 0.7375
+epoch 51, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 52, AUC: 0.784375 ACC: 0.7125
+epoch 52, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 53, AUC: 0.79375 ACC: 0.725
+epoch 53, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 54, AUC: 0.784375 ACC: 0.7125
+epoch 54, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 55, AUC: 0.775 ACC: 0.7
+epoch 55, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 56, AUC: 0.775 ACC: 0.7
+epoch 56, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 57, AUC: 0.775 ACC: 0.7
+epoch 57, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 58, AUC: 0.775 ACC: 0.7
+epoch 58, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 59, AUC: 0.784375 ACC: 0.7125
+epoch 59, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 60, AUC: 0.775 ACC: 0.7
+epoch 60, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 61, AUC: 0.784375 ACC: 0.7125
+epoch 61, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 62, AUC: 0.784375 ACC: 0.7125
+epoch 62, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 63, AUC: 0.784375 ACC: 0.7125
+epoch 63, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 64, AUC: 0.775 ACC: 0.7
+epoch 64, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 65, AUC: 0.79375 ACC: 0.725
+epoch 65, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 66, AUC: 0.784375 ACC: 0.7125
+epoch 66, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 67, AUC: 0.79375 ACC: 0.725
+epoch 67, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 68, AUC: 0.775 ACC: 0.7
+epoch 68, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 69, AUC: 0.775 ACC: 0.7
+epoch 69, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 70, AUC: 0.784375 ACC: 0.7125
+epoch 70, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 71, AUC: 0.775 ACC: 0.7
+epoch 71, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 72, AUC: 0.803125 ACC: 0.7375
+epoch 72, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 73, AUC: 0.775 ACC: 0.7
+epoch 73, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 74, AUC: 0.775 ACC: 0.7
+epoch 74, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 75, AUC: 0.775 ACC: 0.7
+epoch 75, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 76, AUC: 0.775 ACC: 0.7
+epoch 76, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 77, AUC: 0.79375 ACC: 0.725
+epoch 77, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 78, AUC: 0.775 ACC: 0.7
+epoch 78, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 79, AUC: 0.775 ACC: 0.7
+epoch 79, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 80, AUC: 0.775 ACC: 0.7
+epoch 80, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 81, AUC: 0.775 ACC: 0.7
+epoch 81, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 82, AUC: 0.784375 ACC: 0.7125
+epoch 82, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 83, AUC: 0.775 ACC: 0.7
+epoch 83, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 84, AUC: 0.775 ACC: 0.7
+epoch 84, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 85, AUC: 0.775 ACC: 0.7
+epoch 85, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 86, AUC: 0.775 ACC: 0.7
+epoch 86, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 87, AUC: 0.775 ACC: 0.7
+epoch 87, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 88, AUC: 0.775 ACC: 0.7
+epoch 88, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 89, AUC: 0.775 ACC: 0.7
+epoch 89, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 90, AUC: 0.775 ACC: 0.7
+epoch 90, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 91, AUC: 0.775 ACC: 0.7
+epoch 91, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 92, AUC: 0.775 ACC: 0.7
+epoch 92, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 93, AUC: 0.775 ACC: 0.7
+epoch 93, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 94, AUC: 0.775 ACC: 0.7
+epoch 94, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 95, AUC: 0.775 ACC: 0.7
+epoch 95, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 96, AUC: 0.775 ACC: 0.7
+epoch 96, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 97, AUC: 0.775 ACC: 0.7
+epoch 97, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 98, AUC: 0.775 ACC: 0.7
+epoch 98, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 99, AUC: 0.775 ACC: 0.7
+epoch 99, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 0, AUC: 0.465625 ACC: 0.2875
+epoch 0, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 0, AUC: 0.465625 ACC: 0.2875
+epoch 0, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 0, AUC: 0.465625 ACC: 0.2875
+epoch 0, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 1, AUC: 0.775 ACC: 0.7
+epoch 1, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 2, AUC: 0.821875 ACC: 0.7625
+epoch 2, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 3, AUC: 0.8125 ACC: 0.75
+epoch 3, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 4, AUC: 0.8125 ACC: 0.75
+epoch 4, AUC_Student: 0.8125 ACC_Student: 0.75
+epoch 5, AUC: 0.821875 ACC: 0.7625
+epoch 5, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 6, AUC: 0.803125 ACC: 0.7375
+epoch 6, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 7, AUC: 0.775 ACC: 0.7
+epoch 7, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 8, AUC: 0.775 ACC: 0.7
+epoch 8, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 9, AUC: 0.775 ACC: 0.7
+epoch 9, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 10, AUC: 0.765625 ACC: 0.6875
+epoch 10, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 11, AUC: 0.79375 ACC: 0.725
+epoch 11, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 12, AUC: 0.784375 ACC: 0.7125
+epoch 12, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 13, AUC: 0.821875 ACC: 0.7625
+epoch 13, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 14, AUC: 0.803125 ACC: 0.7375
+epoch 14, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 15, AUC: 0.803125 ACC: 0.7375
+epoch 15, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 16, AUC: 0.803125 ACC: 0.7375
+epoch 16, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 17, AUC: 0.784375 ACC: 0.7125
+epoch 17, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 18, AUC: 0.784375 ACC: 0.7125
+epoch 18, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 19, AUC: 0.765625 ACC: 0.6875
+epoch 19, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 20, AUC: 0.75625 ACC: 0.675
+epoch 20, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 21, AUC: 0.803125 ACC: 0.7375
+epoch 21, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 22, AUC: 0.765625 ACC: 0.6875
+epoch 22, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 23, AUC: 0.803125 ACC: 0.7375
+epoch 23, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 24, AUC: 0.784375 ACC: 0.7125
+epoch 24, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 25, AUC: 0.79375 ACC: 0.725
+epoch 25, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 26, AUC: 0.765625 ACC: 0.6875
+epoch 26, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 27, AUC: 0.784375 ACC: 0.7125
+epoch 27, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 28, AUC: 0.775 ACC: 0.7
+epoch 28, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 29, AUC: 0.775 ACC: 0.7
+epoch 29, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 30, AUC: 0.765625 ACC: 0.6875
+epoch 30, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 31, AUC: 0.746875 ACC: 0.6625
+epoch 31, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 32, AUC: 0.784375 ACC: 0.7125
+epoch 32, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 33, AUC: 0.784375 ACC: 0.7125
+epoch 33, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 34, AUC: 0.765625 ACC: 0.6875
+epoch 34, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 35, AUC: 0.784375 ACC: 0.7125
+epoch 35, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 36, AUC: 0.775 ACC: 0.7
+epoch 36, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 37, AUC: 0.765625 ACC: 0.6875
+epoch 37, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 38, AUC: 0.79375 ACC: 0.725
+epoch 38, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 39, AUC: 0.765625 ACC: 0.6875
+epoch 39, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 40, AUC: 0.784375 ACC: 0.7125
+epoch 40, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 41, AUC: 0.775 ACC: 0.7
+epoch 41, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 42, AUC: 0.765625 ACC: 0.6875
+epoch 42, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 43, AUC: 0.765625 ACC: 0.6875
+epoch 43, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 44, AUC: 0.775 ACC: 0.7
+epoch 44, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 45, AUC: 0.775 ACC: 0.7
+epoch 45, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 46, AUC: 0.775 ACC: 0.7
+epoch 46, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 47, AUC: 0.775 ACC: 0.7
+epoch 47, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 48, AUC: 0.79375 ACC: 0.725
+epoch 48, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 49, AUC: 0.784375 ACC: 0.7125
+epoch 49, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 50, AUC: 0.775 ACC: 0.7
+epoch 50, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 51, AUC: 0.784375 ACC: 0.7125
+epoch 51, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 52, AUC: 0.775 ACC: 0.7
+epoch 52, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 0, AUC: 0.49375 ACC: 0.325
+epoch 0, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 1, AUC: 0.803125 ACC: 0.7375
+epoch 1, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 2, AUC: 0.821875 ACC: 0.7625
+epoch 2, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 3, AUC: 0.821875 ACC: 0.7625
+epoch 3, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 4, AUC: 0.8125 ACC: 0.75
+epoch 4, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 5, AUC: 0.8125 ACC: 0.75
+epoch 5, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 6, AUC: 0.803125 ACC: 0.7375
+epoch 6, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 7, AUC: 0.746875 ACC: 0.6625
+epoch 7, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 8, AUC: 0.775 ACC: 0.7
+epoch 8, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 9, AUC: 0.75625 ACC: 0.675
+epoch 9, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 10, AUC: 0.765625 ACC: 0.6875
+epoch 10, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 11, AUC: 0.821875 ACC: 0.7625
+epoch 11, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 12, AUC: 0.79375 ACC: 0.725
+epoch 12, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 13, AUC: 0.79375 ACC: 0.725
+epoch 13, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 14, AUC: 0.775 ACC: 0.7
+epoch 14, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 15, AUC: 0.79375 ACC: 0.725
+epoch 15, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 16, AUC: 0.79375 ACC: 0.725
+epoch 16, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 17, AUC: 0.784375 ACC: 0.7125
+epoch 17, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 18, AUC: 0.784375 ACC: 0.7125
+epoch 18, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 19, AUC: 0.79375 ACC: 0.725
+epoch 19, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 20, AUC: 0.775 ACC: 0.7
+epoch 20, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 21, AUC: 0.79375 ACC: 0.725
+epoch 21, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 22, AUC: 0.784375 ACC: 0.7125
+epoch 22, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 23, AUC: 0.803125 ACC: 0.7375
+epoch 23, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 24, AUC: 0.775 ACC: 0.7
+epoch 24, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 25, AUC: 0.803125 ACC: 0.7375
+epoch 25, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 26, AUC: 0.775 ACC: 0.7
+epoch 26, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 27, AUC: 0.784375 ACC: 0.7125
+epoch 27, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 28, AUC: 0.746875 ACC: 0.6625
+epoch 28, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 29, AUC: 0.75625 ACC: 0.675
+epoch 29, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 30, AUC: 0.765625 ACC: 0.6875
+epoch 30, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 31, AUC: 0.75625 ACC: 0.675
+epoch 31, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 32, AUC: 0.79375 ACC: 0.725
+epoch 32, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 33, AUC: 0.784375 ACC: 0.7125
+epoch 33, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 34, AUC: 0.765625 ACC: 0.6875
+epoch 34, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 35, AUC: 0.784375 ACC: 0.7125
+epoch 35, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 36, AUC: 0.79375 ACC: 0.725
+epoch 36, AUC_Student: 0.746875 ACC_Student: 0.6625
+epoch 37, AUC: 0.784375 ACC: 0.7125
+epoch 37, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 38, AUC: 0.803125 ACC: 0.7375
+epoch 38, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 39, AUC: 0.775 ACC: 0.7
+epoch 39, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 40, AUC: 0.79375 ACC: 0.725
+epoch 40, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 41, AUC: 0.784375 ACC: 0.7125
+epoch 41, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 42, AUC: 0.79375 ACC: 0.725
+epoch 42, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 43, AUC: 0.79375 ACC: 0.725
+epoch 43, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 44, AUC: 0.79375 ACC: 0.725
+epoch 44, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 45, AUC: 0.784375 ACC: 0.7125
+epoch 45, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 46, AUC: 0.775 ACC: 0.7
+epoch 46, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 47, AUC: 0.784375 ACC: 0.7125
+epoch 47, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 48, AUC: 0.803125 ACC: 0.7375
+epoch 48, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 49, AUC: 0.784375 ACC: 0.7125
+epoch 49, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 50, AUC: 0.79375 ACC: 0.725
+epoch 50, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 51, AUC: 0.8125 ACC: 0.75
+epoch 51, AUC_Student: 0.75625 ACC_Student: 0.675
+epoch 52, AUC: 0.784375 ACC: 0.7125
+epoch 52, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 53, AUC: 0.784375 ACC: 0.7125
+epoch 53, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 54, AUC: 0.79375 ACC: 0.725
+epoch 54, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 55, AUC: 0.784375 ACC: 0.7125
+epoch 55, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 56, AUC: 0.775 ACC: 0.7
+epoch 56, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 57, AUC: 0.775 ACC: 0.7
+epoch 57, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 58, AUC: 0.784375 ACC: 0.7125
+epoch 58, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 59, AUC: 0.79375 ACC: 0.725
+epoch 59, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 60, AUC: 0.784375 ACC: 0.7125
+epoch 60, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 61, AUC: 0.79375 ACC: 0.725
+epoch 61, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 62, AUC: 0.775 ACC: 0.7
+epoch 62, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 63, AUC: 0.784375 ACC: 0.7125
+epoch 63, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 64, AUC: 0.784375 ACC: 0.7125
+epoch 64, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 65, AUC: 0.784375 ACC: 0.7125
+epoch 65, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 66, AUC: 0.775 ACC: 0.7
+epoch 66, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 67, AUC: 0.79375 ACC: 0.725
+epoch 67, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 68, AUC: 0.775 ACC: 0.7
+epoch 68, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 69, AUC: 0.775 ACC: 0.7
+epoch 69, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 70, AUC: 0.775 ACC: 0.7
+epoch 70, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 71, AUC: 0.775 ACC: 0.7
+epoch 71, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 72, AUC: 0.775 ACC: 0.7
+epoch 72, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 73, AUC: 0.775 ACC: 0.7
+epoch 73, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 74, AUC: 0.775 ACC: 0.7
+epoch 74, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 75, AUC: 0.775 ACC: 0.7
+epoch 75, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 76, AUC: 0.775 ACC: 0.7
+epoch 76, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 77, AUC: 0.784375 ACC: 0.7125
+epoch 77, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 78, AUC: 0.775 ACC: 0.7
+epoch 78, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 79, AUC: 0.775 ACC: 0.7
+epoch 79, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 80, AUC: 0.775 ACC: 0.7
+epoch 80, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 81, AUC: 0.775 ACC: 0.7
+epoch 81, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 82, AUC: 0.775 ACC: 0.7
+epoch 82, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 83, AUC: 0.775 ACC: 0.7
+epoch 83, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 84, AUC: 0.775 ACC: 0.7
+epoch 84, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 85, AUC: 0.775 ACC: 0.7
+epoch 85, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 86, AUC: 0.775 ACC: 0.7
+epoch 86, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 87, AUC: 0.775 ACC: 0.7
+epoch 87, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 88, AUC: 0.765625 ACC: 0.6875
+epoch 88, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 89, AUC: 0.775 ACC: 0.7
+epoch 89, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 90, AUC: 0.775 ACC: 0.7
+epoch 90, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 91, AUC: 0.775 ACC: 0.7
+epoch 91, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 92, AUC: 0.775 ACC: 0.7
+epoch 92, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 93, AUC: 0.775 ACC: 0.7
+epoch 93, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 94, AUC: 0.775 ACC: 0.7
+epoch 94, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 95, AUC: 0.775 ACC: 0.7
+epoch 95, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 96, AUC: 0.775 ACC: 0.7
+epoch 96, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 97, AUC: 0.775 ACC: 0.7
+epoch 97, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 98, AUC: 0.775 ACC: 0.7
+epoch 98, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 99, AUC: 0.775 ACC: 0.7
+epoch 99, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 0, AUC: 0.49375 ACC: 0.325
+epoch 0, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 1, AUC: 0.803125 ACC: 0.7375
+epoch 1, AUC_Student: 0.728125 ACC_Student: 0.6375
+epoch 2, AUC: 0.821875 ACC: 0.7625
+epoch 2, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 3, AUC: 0.821875 ACC: 0.7625
+epoch 3, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 4, AUC: 0.8125 ACC: 0.75
+epoch 4, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 5, AUC: 0.8125 ACC: 0.75
+epoch 5, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 6, AUC: 0.803125 ACC: 0.7375
+epoch 6, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 7, AUC: 0.746875 ACC: 0.6625
+epoch 7, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 8, AUC: 0.775 ACC: 0.7
+epoch 8, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 9, AUC: 0.75625 ACC: 0.675
+epoch 9, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 10, AUC: 0.765625 ACC: 0.6875
+epoch 10, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 11, AUC: 0.821875 ACC: 0.7625
+epoch 11, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 12, AUC: 0.79375 ACC: 0.725
+epoch 12, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 13, AUC: 0.79375 ACC: 0.725
+epoch 13, AUC_Student: 0.79375 ACC_Student: 0.725
+epoch 14, AUC: 0.775 ACC: 0.7
+epoch 14, AUC_Student: 0.775 ACC_Student: 0.7
+epoch 15, AUC: 0.79375 ACC: 0.725
+epoch 15, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 16, AUC: 0.79375 ACC: 0.725
+epoch 16, AUC_Student: 0.765625 ACC_Student: 0.6875
+epoch 17, AUC: 0.784375 ACC: 0.7125
+epoch 17, AUC_Student: 0.803125 ACC_Student: 0.7375
+epoch 18, AUC: 0.784375 ACC: 0.7125
+epoch 18, AUC_Student: 0.784375 ACC_Student: 0.7125
+epoch 19, AUC: 0.79375 ACC: 0.725
+epoch 19, AUC_Student: 0.784375 ACC_Student: 0.7125
