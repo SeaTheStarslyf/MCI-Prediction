@@ -39,90 +39,80 @@ from torch.utils.data import Dataset, DataLoader
 import clip
 # from clip.model import CLIP
 
-def eval_metrics(y_true,y_pred,epoch,metric_path,if_student=False):
-    # 确保y_true和y_pred是numpy数组
+def eval_metrics(y_true, y_pred_class, epoch, metric_path, if_student=False, raw_probs=None):
+    # 确保y_true和y_pred_class是numpy数组
     if isinstance(y_true, torch.Tensor):
         y_true = y_true.cpu().numpy()
-    if isinstance(y_pred, torch.Tensor):
-        y_pred = y_pred.cpu().numpy()
+    if isinstance(y_pred_class, torch.Tensor):
+        y_pred_class = y_pred_class.cpu().numpy()
+    
+    # 如果提供了原始概率，确保也是numpy数组
+    if raw_probs is not None:
+        if isinstance(raw_probs, torch.Tensor):
+            raw_probs = raw_probs.cpu().numpy()
+    
+    # 检查实际类别数量
+    unique_classes = np.unique(y_true)
+    num_classes = len(unique_classes)
+    print(f"数据集中实际类别: {unique_classes}, 类别数量: {num_classes}")
         
-    # 检查样本数量是否足够进行5折评估
-    n_samples = len(y_true)
-    if n_samples < 5:
-        # 样本数量不足时，直接计算整体指标
-        precision = precision_score(y_true, y_pred, average='macro', zero_division=0)
-        recall = recall_score(y_true, y_pred, average='macro', zero_division=0)
-        f1 = f1_score(y_true, y_pred, average='macro', zero_division=0)
-        acc = accuracy_score(y_true, y_pred)
-        
-        y_true_one_hot = torch.nn.functional.one_hot(torch.tensor(y_true), num_classes=3).numpy()
-        y_pred_one_hot = torch.nn.functional.one_hot(torch.tensor(y_pred), num_classes=3).numpy()
-        auc = roc_auc_score(y_true_one_hot.ravel(), y_pred_one_hot.ravel())
-        
-        print(f'样本数量不足，计算整体指标 - AUC: {auc:.4f}, ACC: {acc:.4f}, F1: {f1:.4f}')
-        
-        with open(metric_path,'a+') as f:
-            if if_student:
-                line = f'epoch {epoch}, AUC_Student: {auc:.4f}, ACC_Student: {acc:.4f}, F1_Student: {f1:.4f}\n'
+    # 直接计算整个测试集的性能指标
+    precision = precision_score(y_true, y_pred_class, average='macro', zero_division=0)
+    recall = recall_score(y_true, y_pred_class, average='macro', zero_division=0)
+    f1 = f1_score(y_true, y_pred_class, average='macro', zero_division=0)
+    acc = accuracy_score(y_true, y_pred_class)
+    
+    # 使用标准AUC口径：
+    # - 二分类：使用正类概率
+    # - 多分类：使用OvR macro
+    try:
+        if raw_probs is not None:
+            raw_probs = np.asarray(raw_probs)
+            if raw_probs.ndim == 1:
+                auc = roc_auc_score(y_true, raw_probs)
+            elif raw_probs.ndim == 2 and raw_probs.shape[1] == 2:
+                auc = roc_auc_score(y_true, raw_probs[:, 1])
+            elif raw_probs.ndim == 2 and raw_probs.shape[1] > 2:
+                auc = roc_auc_score(y_true, raw_probs, multi_class='ovr', average='macro')
             else:
-                line = f'epoch {epoch}, AUC: {auc:.4f}, ACC: {acc:.4f}, F1: {f1:.4f}\n'
-            f.write(line)
-            
-        return auc, acc
+                raise ValueError(f"不支持的raw_probs形状: {raw_probs.shape}")
+        else:
+            # 无概率时退化为离散预测（可计算但区分能力有限）
+            if num_classes <= 2:
+                auc = roc_auc_score(y_true, y_pred_class)
+            else:
+                all_classes = np.unique(np.concatenate([y_true, y_pred_class]))
+                class_to_idx = {c: i for i, c in enumerate(all_classes)}
+                y_true_mapped = np.array([class_to_idx[c] for c in y_true], dtype=np.int64)
+                y_pred_mapped = np.array([class_to_idx[c] for c in y_pred_class], dtype=np.int64)
+                y_pred_one_hot = np.eye(len(all_classes), dtype=np.float32)[y_pred_mapped]
+                auc = roc_auc_score(y_true_mapped, y_pred_one_hot, multi_class='ovr', average='macro')
+    except Exception as e:
+        print(f"计算AUC时出错: {e}")
+        auc = 0.0
     
-    # 5折交叉验证评估
-    precisions, recalls, f1s, accs, aucs = [], [], [], [], []
-    fold_size = n_samples // 5
-    
-    for i in range(5):
-        bi = i * fold_size
-        ei = n_samples if i == 4 else (i+1) * fold_size
-        y_true_i, y_pred_i = y_true[bi:ei], y_pred[bi:ei]
-        
-        # 计算指标
-        precision = precision_score(y_true_i, y_pred_i, average='macro', zero_division=0)
-        recall = recall_score(y_true_i, y_pred_i, average='macro', zero_division=0)
-        f1 = f1_score(y_true_i, y_pred_i, average='macro', zero_division=0)
-        acc = accuracy_score(y_true_i, y_pred_i)
-        
-        # 计算AUC (使用one-hot编码)
-        y_true_i_one_hot = torch.nn.functional.one_hot(torch.tensor(y_true_i), num_classes=3).numpy()
-        y_pred_i_one_hot = torch.nn.functional.one_hot(torch.tensor(y_pred_i), num_classes=3).numpy()
-        auc = roc_auc_score(y_true_i_one_hot.ravel(), y_pred_i_one_hot.ravel())
-        
-        # 记录各折指标
-        precisions.append(precision)
-        recalls.append(recall)
-        f1s.append(f1)
-        accs.append(acc)
-        aucs.append(auc)
-    
-    # 计算平均指标和标准差
-    mean_acc, std_acc = np.mean(accs), np.std(accs)
-    mean_auc, std_auc = np.mean(aucs), np.std(aucs)
-    mean_precision, std_precision = np.mean(precisions), np.std(precisions)
-    mean_recall, std_recall = np.mean(recalls), np.std(recalls)
-    mean_f1, std_f1 = np.mean(f1s), np.std(f1s)
-    
-    # 打印评估结果
-    print(f'accs mean±std: {mean_acc:.4f}±{std_acc:.4f}')
-    print(f'aucs mean±std: {mean_auc:.4f}±{std_auc:.4f}')
-    print(f'precisions mean±std: {mean_precision:.4f}±{std_precision:.4f}')
-    print(f'recalls mean±std: {mean_recall:.4f}±{std_recall:.4f}')
-    print(f'f1s mean±std: {mean_f1:.4f}±{std_f1:.4f}')
+    print(f'整体指标 - AUC: {auc:.4f}, ACC: {acc:.4f}, F1: {f1:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}')
     
     # 保存结果到文件
     try:
         with open(metric_path, 'a+') as f:
             if if_student:
-                line = f'epoch {epoch}, AUC_Student: {mean_auc:.4f}, ACC_Student: {mean_acc:.4f}, F1_Student: {mean_f1:.4f}\n'
+                line = (
+                    f'epoch {epoch}, '
+                    f'AUC_Student: {auc:.4f}, ACC_Student: {acc:.4f}, '
+                    f'F1_Student: {f1:.4f}, Precision_Student: {precision:.4f}, Recall_Student: {recall:.4f}\n'
+                )
             else:
-                line = f'epoch {epoch}, AUC: {mean_auc:.4f}, ACC: {mean_acc:.4f}, F1: {mean_f1:.4f}\n'
+                line = (
+                    f'epoch {epoch}, '
+                    f'AUC: {auc:.4f}, ACC: {acc:.4f}, F1: {f1:.4f}, '
+                    f'Precision: {precision:.4f}, Recall: {recall:.4f}\n'
+                )
             f.write(line)
     except Exception as e:
         print(f'保存评估指标到文件失败: {e}')
-    
-    return mean_auc, mean_acc
+        
+    return auc, acc, f1, precision, recall
 
 class TrainingVisualizer:
     def __init__(self, save_dir="training_plots", phase_name=None):
@@ -139,11 +129,23 @@ class TrainingVisualizer:
         self.loss_itc = []
         self.loss_text_res = []
         self.loss_image_res = []
+        self.loss_cog_res = []
         self.loss_cls = []
         self.loss_cls_tea = []
         self.loss_cls_stu = []
         self.loss_kl = []
-        self.loss_local = []
+        self.loss_feat = []
+        # 初始化验证损失列表
+        self.val_losses = []
+        self.val_loss_itc = []
+        self.val_loss_text_res = []
+        self.val_loss_image_res = []
+        self.val_loss_cog_res = []
+        self.val_loss_cls = []
+        self.val_loss_cls_tea = []
+        self.val_loss_cls_stu = []
+        self.val_loss_kl = []
+        self.val_loss_feat = []
         # 添加学习率曲线
         self.lr_values = []
         # 初始化训练集指标列表
@@ -158,6 +160,9 @@ class TrainingVisualizer:
         self.val_aucs_stu = []
         # 确保保存目录存在
         os.makedirs(save_dir, exist_ok=True)
+        # 创建特征可视化目录
+        self.feat_vis_dir = os.path.join(save_dir, "feature_visualization")
+        os.makedirs(self.feat_vis_dir, exist_ok=True)
 
         # 创建图表和子图 - 增加学习率曲线图
         self.fig, (self.ax1, self.ax2, self.ax3) = plt.subplots(3, 1, figsize=(12, 15))
@@ -165,10 +170,12 @@ class TrainingVisualizer:
         plt.switch_backend('Agg')
     
     def update_metrics(self, epoch, train_loss=None, loss_itc=None, loss_text_res=None, 
-                    loss_image_res=None, loss_cls=None, loss_cls_tea=None, loss_cls_stu=None, 
-                    loss_kl=None, loss_local=None, val_acc=None, val_auc=None, 
+                    loss_image_res=None, loss_cog_res=None, loss_cls=None, loss_cls_tea=None, loss_cls_stu=None, 
+                    loss_kl=None, loss_feat=None, val_acc=None, val_auc=None, 
                     val_acc_stu=None, val_auc_stu=None, lr=None, train_acc=None, train_auc=None,
-                    train_acc_stu=None, train_auc_stu=None):
+                    train_acc_stu=None, train_auc_stu=None, val_loss=None, val_loss_itc=None, val_loss_text_res=None,
+                    val_loss_image_res=None, val_loss_cog_res=None, val_loss_cls=None, val_loss_cls_tea=None, val_loss_cls_stu=None,
+                    val_loss_kl=None, val_loss_feat=None, image_features=None, text_features=None, labels=None):
         """更新指标并在同一张图上绘制
         
         Args:
@@ -181,7 +188,6 @@ class TrainingVisualizer:
             loss_cls_tea: 教师模型分类损失
             loss_cls_stu: 学生模型分类损失
             loss_kl: KL散度损失（蒸馏损失）
-            loss_local: 局部损失
             val_acc: 教师模型验证准确率
             val_auc: 教师模型验证AUC
             val_acc_stu: 学生模型验证准确率
@@ -191,6 +197,19 @@ class TrainingVisualizer:
             train_auc: 教师模型训练AUC
             train_acc_stu: 学生模型训练准确率
             train_auc_stu: 学生模型训练AUC
+            val_loss: 总体验证损失
+            val_loss_itc: 验证集图像-文本对比损失
+            val_loss_text_res: 验证集文本重构损失
+            val_loss_image_res: 验证集图像重构损失
+            val_loss_cog_res: 验证集认知量表重构损失
+            val_loss_cls: 验证集分类损失
+            val_loss_cls_tea: 验证集教师模型分类损失
+            val_loss_cls_stu: 验证集学生模型分类损失
+            val_loss_kl: 验证集KL散度损失（蒸馏损失）
+            val_loss_feat: 验证集特征级蒸馏损失
+            image_features: 图像特征，用于可视化
+            text_features: 文本/语音特征，用于可视化
+            labels: 标签，用于可视化时的颜色编码
         """
         # 更新损失指标
         if train_loss is not None:
@@ -201,6 +220,8 @@ class TrainingVisualizer:
             self.loss_text_res.append(float(loss_text_res))
         if loss_image_res is not None:
             self.loss_image_res.append(float(loss_image_res))
+        if loss_cog_res is not None:
+            self.loss_cog_res.append(float(loss_cog_res))
         if loss_cls is not None:
             self.loss_cls.append(float(loss_cls))
         if loss_cls_tea is not None:
@@ -209,8 +230,29 @@ class TrainingVisualizer:
             self.loss_cls_stu.append(float(loss_cls_stu))
         if loss_kl is not None:
             self.loss_kl.append(float(loss_kl))
-        if loss_local is not None:
-            self.loss_local.append(float(loss_local))
+        if loss_feat is not None:
+            self.loss_feat.append(float(loss_feat))
+        # 更新验证损失指标
+        if val_loss is not None:
+            self.val_losses.append(float(val_loss))
+        if val_loss_itc is not None:
+            self.val_loss_itc.append(float(val_loss_itc))
+        if val_loss_text_res is not None:
+            self.val_loss_text_res.append(float(val_loss_text_res))
+        if val_loss_image_res is not None:
+            self.val_loss_image_res.append(float(val_loss_image_res))
+        if val_loss_cog_res is not None:
+            self.val_loss_cog_res.append(float(val_loss_cog_res))
+        if val_loss_cls is not None:
+            self.val_loss_cls.append(float(val_loss_cls))
+        if val_loss_cls_tea is not None:
+            self.val_loss_cls_tea.append(float(val_loss_cls_tea))
+        if val_loss_cls_stu is not None:
+            self.val_loss_cls_stu.append(float(val_loss_cls_stu))
+        if val_loss_kl is not None:
+            self.val_loss_kl.append(float(val_loss_kl))
+        if val_loss_feat is not None:
+            self.val_loss_feat.append(float(val_loss_feat))
         # 更新学习率
         if lr is not None:
             self.lr_values.append(float(lr))
@@ -238,6 +280,13 @@ class TrainingVisualizer:
             self._update_plot()
         except Exception as e:
             print(f"更新训练图表时出错: {e}")
+        
+        # 可视化特征空间
+        if image_features is not None and text_features is not None:
+            try:
+                self._visualize_features(epoch, image_features, text_features, labels)
+            except Exception as e:
+                print(f"可视化特征空间时出错: {e}")
 
     def _update_plot(self):
         """更新图表，显示所有loss曲线和验证指标"""
@@ -251,33 +300,58 @@ class TrainingVisualizer:
             epochs = range(1, len(self.train_losses) + 1)
             
             # 绘制总损失曲线
-            self.ax1.plot(epochs, self.train_losses, 'b-', label='Total Loss', linewidth=2, marker='o')
+            self.ax1.plot(epochs, self.train_losses, 'b-', label='Train Total Loss', linewidth=2, marker='o')
+            
+            # 绘制验证集总损失曲线
+            if self.val_losses and any(loss is not None and not math.isnan(loss) for loss in self.val_losses):
+                self.ax1.plot(epochs[:len(self.val_losses)], self.val_losses, 'b--', label='Val Total Loss', linewidth=2, marker='o')
             
             # 根据训练阶段动态显示相关损失曲线
             # 只显示有数据的损失曲线，避免图表过于混乱
             if self.loss_itc and any(loss is not None and not math.isnan(loss) for loss in self.loss_itc):
-                self.ax1.plot(epochs, self.loss_itc, 'r-', label='ITC Loss', linewidth=1, marker='^')
+                self.ax1.plot(epochs, self.loss_itc, 'r-', label='Train ITC Loss', linewidth=1, marker='^')
+            if self.val_loss_itc and any(loss is not None and not math.isnan(loss) for loss in self.val_loss_itc):
+                self.ax1.plot(epochs[:len(self.val_loss_itc)], self.val_loss_itc, 'r--', label='Val ITC Loss', linewidth=1, marker='^')
             
             if self.loss_text_res and any(loss is not None and not math.isnan(loss) for loss in self.loss_text_res):
-                self.ax1.plot(epochs, self.loss_text_res, 'g-', label='Text Res Loss', linewidth=1, marker='s')
+                self.ax1.plot(epochs, self.loss_text_res, 'g-', label='Train Text Res Loss', linewidth=1, marker='s')
+            if self.val_loss_text_res and any(loss is not None and not math.isnan(loss) for loss in self.val_loss_text_res):
+                self.ax1.plot(epochs[:len(self.val_loss_text_res)], self.val_loss_text_res, 'g--', label='Val Text Res Loss', linewidth=1, marker='s')
             
             if self.loss_image_res and any(loss is not None and not math.isnan(loss) for loss in self.loss_image_res):
-                self.ax1.plot(epochs, self.loss_image_res, 'c-', label='Image Res Loss', linewidth=1, marker='d')
+                self.ax1.plot(epochs, self.loss_image_res, 'c-', label='Train Image Res Loss', linewidth=1, marker='d')
+            if self.val_loss_image_res and any(loss is not None and not math.isnan(loss) for loss in self.val_loss_image_res):
+                self.ax1.plot(epochs[:len(self.val_loss_image_res)], self.val_loss_image_res, 'c--', label='Val Image Res Loss', linewidth=1, marker='d')
+            
+            if self.loss_cog_res and any(loss is not None and not math.isnan(loss) for loss in self.loss_cog_res):
+                self.ax1.plot(epochs, self.loss_cog_res, 'y-', label='Train Cog Res Loss', linewidth=1, marker='h')
+            if self.val_loss_cog_res and any(loss is not None and not math.isnan(loss) for loss in self.val_loss_cog_res):
+                self.ax1.plot(epochs[:len(self.val_loss_cog_res)], self.val_loss_cog_res, 'y--', label='Val Cog Res Loss', linewidth=1, marker='h')
             
             if self.loss_cls and any(loss is not None and not math.isnan(loss) for loss in self.loss_cls):
-                self.ax1.plot(epochs, self.loss_cls, 'm-', label='CLS Loss', linewidth=1, marker='v')
+                self.ax1.plot(epochs, self.loss_cls, 'm-', label='Train CLS Loss', linewidth=1, marker='v')
+            if self.val_loss_cls and any(loss is not None and not math.isnan(loss) for loss in self.val_loss_cls):
+                self.ax1.plot(epochs[:len(self.val_loss_cls)], self.val_loss_cls, 'm--', label='Val CLS Loss', linewidth=1, marker='v')
 
             if self.loss_cls_tea and any(loss is not None and not math.isnan(loss) for loss in self.loss_cls_tea):
-                self.ax1.plot(epochs, self.loss_cls_tea, 'y-', label='Teacher CLS Loss', linewidth=1, marker='>')
+                self.ax1.plot(epochs, self.loss_cls_tea, 'y-', label='Train Teacher CLS Loss', linewidth=1, marker='>')
+            if self.val_loss_cls_tea and any(loss is not None and not math.isnan(loss) for loss in self.val_loss_cls_tea):
+                self.ax1.plot(epochs[:len(self.val_loss_cls_tea)], self.val_loss_cls_tea, 'y--', label='Val Teacher CLS Loss', linewidth=1, marker='>')
 
             if self.loss_cls_stu and any(loss is not None and not math.isnan(loss) for loss in self.loss_cls_stu):
-                self.ax1.plot(epochs, self.loss_cls_stu, 'k-', label='Student CLS Loss', linewidth=1, marker='<')
+                self.ax1.plot(epochs, self.loss_cls_stu, 'k-', label='Train Student CLS Loss', linewidth=1, marker='<')
+            if self.val_loss_cls_stu and any(loss is not None and not math.isnan(loss) for loss in self.val_loss_cls_stu):
+                self.ax1.plot(epochs[:len(self.val_loss_cls_stu)], self.val_loss_cls_stu, 'k--', label='Val Student CLS Loss', linewidth=1, marker='<')
 
             if self.loss_kl and any(loss is not None and not math.isnan(loss) for loss in self.loss_kl):
-                self.ax1.plot(epochs, self.loss_kl, 'gray', label='KL Loss', linewidth=1, marker='p')
-
-            if self.loss_local and any(loss is not None and not math.isnan(loss) for loss in self.loss_local):
-                self.ax1.plot(epochs, self.loss_local, 'orange', label='Local Loss', linewidth=1, marker='o')
+                self.ax1.plot(epochs, self.loss_kl, 'gray', label='Train KL Loss', linewidth=1, marker='p')
+            if self.val_loss_kl and any(loss is not None and not math.isnan(loss) for loss in self.val_loss_kl):
+                self.ax1.plot(epochs[:len(self.val_loss_kl)], self.val_loss_kl, 'gray', linestyle='--', label='Val KL Loss', linewidth=1, marker='p')
+            
+            if self.loss_feat and any(loss is not None and not math.isnan(loss) for loss in self.loss_feat):
+                self.ax1.plot(epochs, self.loss_feat, 'purple', label='Train Feat Loss', linewidth=1, marker='*')
+            if self.val_loss_feat and any(loss is not None and not math.isnan(loss) for loss in self.val_loss_feat):
+                self.ax1.plot(epochs[:len(self.val_loss_feat)], self.val_loss_feat, 'purple', linestyle='--', label='Val Feat Loss', linewidth=1, marker='*')
             
             # 设置第一个子图的属性
             title = f'Training Losses'
@@ -379,6 +453,112 @@ class TrainingVisualizer:
         except Exception as e:
             print(f"保存训练图表失败: {e}")
     
+    def _visualize_features(self, epoch, image_features, text_features, labels=None):
+        """可视化特征空间
+        
+        Args:
+            epoch: 当前训练轮数
+            image_features: 图像特征
+            text_features: 文本/语音特征
+            labels: 标签，用于颜色编码
+        """
+        try:
+            # 确保特征是numpy数组
+            if isinstance(image_features, torch.Tensor):
+                image_features = image_features.cpu().numpy()
+            if isinstance(text_features, torch.Tensor):
+                text_features = text_features.cpu().numpy()
+            if isinstance(labels, torch.Tensor):
+                labels = labels.cpu().numpy()
+            
+            # 生成文件名前缀
+            prefix = ""
+            if self.phase_name:
+                prefix = f"{self.phase_name}_"
+            
+            # 降维并可视化
+            from sklearn.decomposition import PCA
+            from sklearn.manifold import TSNE
+            import umap
+            
+            # 合并特征用于降维
+            all_features = np.concatenate([image_features, text_features], axis=0)
+            
+            # 使用PCA降维
+            pca = PCA(n_components=2)
+            pca_result = pca.fit_transform(all_features)
+            image_pca = pca_result[:len(image_features)]
+            text_pca = pca_result[len(image_features):]
+            
+            # 使用t-SNE降维
+            # 动态调整perplexity值，确保它小于样本数量
+            n_samples = len(all_features)
+            perplexity = min(30, n_samples - 1)
+            tsne = TSNE(n_components=2, perplexity=perplexity)
+            tsne_result = tsne.fit_transform(all_features)
+            image_tsne = tsne_result[:len(image_features)]
+            text_tsne = tsne_result[len(image_features):]
+            
+            # 使用UMAP降维
+            umap_reducer = umap.UMAP(n_components=2, random_state=42)
+            umap_result = umap_reducer.fit_transform(all_features)
+            image_umap = umap_result[:len(image_features)]
+            text_umap = umap_result[len(image_features):]
+            
+            # 可视化方法列表
+            methods = [
+                ('pca', image_pca, text_pca),
+                ('tsne', image_tsne, text_tsne),
+                ('umap', image_umap, text_umap)
+            ]
+            
+            for method_name, img_feats, txt_feats in methods:
+                # 创建图表
+                plt.figure(figsize=(10, 8))
+                
+                # 为每个类别分配颜色
+                if labels is not None:
+                    unique_labels = np.unique(labels)
+                    colors = plt.cm.get_cmap('tab10', len(unique_labels))
+                    
+                    # 绘制图像特征
+                    for i, label in enumerate(unique_labels):
+                        mask = labels == label
+                        plt.scatter(img_feats[mask, 0], img_feats[mask, 1], 
+                                   c=[colors(i)], label=f'Image Label {label}', 
+                                   alpha=0.6, marker='o')
+                    
+                    # 绘制文本特征
+                    for i, label in enumerate(unique_labels):
+                        mask = labels == label
+                        plt.scatter(txt_feats[mask, 0], txt_feats[mask, 1], 
+                                   c=[colors(i)], label=f'Text Label {label}', 
+                                   alpha=0.6, marker='s')
+                else:
+                    # 不使用标签，只区分模态
+                    plt.scatter(img_feats[:, 0], img_feats[:, 1], 
+                               c='blue', label='Image Features', 
+                               alpha=0.6, marker='o')
+                    plt.scatter(txt_feats[:, 0], txt_feats[:, 1], 
+                               c='red', label='Text Features', 
+                               alpha=0.6, marker='s')
+                
+                plt.title(f'Feature Space Visualization (Epoch {epoch}, {method_name.upper()})')
+                plt.xlabel(f'{method_name.upper()} 1')
+                plt.ylabel(f'{method_name.upper()} 2')
+                plt.legend()
+                plt.grid(True, alpha=0.3)
+                
+                # 保存图像
+                save_path = os.path.join(self.feat_vis_dir, 
+                                        f'{prefix}feat_vis_epoch_{epoch}_{method_name}.png')
+                plt.savefig(save_path, dpi=150, bbox_inches='tight')
+                plt.close()
+            
+            print(f"特征空间可视化已保存到: {self.feat_vis_dir} (Epoch {epoch})")
+        except Exception as e:
+            print(f"可视化特征空间时出错: {e}")
+    
     def close(self):
         """清理资源，关闭图表"""
         try:
@@ -451,9 +631,15 @@ def itc_loss(image_feat, text_feat, ids, labels, temp=0.07):
     """
     向量化多正样本实现
     """
+    # 对温度做数值保护，避免训练后期温度过小或异常导致logits爆炸
+    if isinstance(temp, torch.Tensor):
+        safe_temp = torch.clamp(temp, min=1e-3, max=1.0)
+    else:
+        safe_temp = float(max(min(temp, 1.0), 1e-3))
+
     # 计算相似度
-    sim_i2t = image_feat @ text_feat.T / temp
-    sim_t2i = text_feat @ image_feat.T / temp
+    sim_i2t = image_feat @ text_feat.T / safe_temp
+    sim_t2i = text_feat @ image_feat.T / safe_temp
     
     batch_size = len(ids)
     
@@ -478,20 +664,21 @@ def itc_loss(image_feat, text_feat, ids, labels, temp=0.07):
 
 def compute_multi_positive_loss(similarity, pos_mask, temp):
     """向量化多正样本损失计算"""
-    similarity = similarity / temp
-    exp_sim = torch.exp(similarity)
-    
-    # 计算每个样本的正样本和
-    pos_sum = torch.sum(exp_sim * pos_mask.float(), dim=1)
-    # 计算每个样本的总和
-    all_sum = torch.sum(exp_sim, dim=1)
-    
-    # 计算损失
-    losses = -torch.log(pos_sum / all_sum)
-    # 过滤掉没有正样本的情况
-    valid_mask = (pos_sum > 0)
-    
-    return torch.mean(losses[valid_mask]) if torch.any(valid_mask) else torch.tensor(0.0)
+    # 注意：similarity已经在itc_loss函数中除以了temp，这里不需要再除以temp
+    # 使用logsumexp替代exp+sum，避免数值溢出导致inf/nan
+    pos_mask = pos_mask.bool()
+    neg_inf = torch.finfo(similarity.dtype).min
+    pos_similarity = similarity.masked_fill(~pos_mask, neg_inf)
+
+    log_pos_sum = torch.logsumexp(pos_similarity, dim=1)
+    log_all_sum = torch.logsumexp(similarity, dim=1)
+    losses = -(log_pos_sum - log_all_sum)
+
+    # 没有正样本时log_pos_sum会是-inf，过滤掉无效行
+    valid_mask = torch.isfinite(log_pos_sum)
+    if torch.any(valid_mask):
+        return losses[valid_mask].mean()
+    return similarity.new_tensor(0.0)
 
 
 def distillation_loss(y_hat_fusion, y_hat_speech, T=2.0):
@@ -799,11 +986,24 @@ def svd(X, n_components=2, return_singular_values=False):
     return X_reduce
 
 
-def visualize_2d(clusters, colors=None, labels=None, connection=False):
-    assert isinstance(clusters, list)
-    for cluster in clusters:
-        assert isinstance(cluster, np.ndarray)
-        assert cluster.shape[1] == 2
+def visualize_2d(clusters, colors=None, labels=None, connection=False, output_path="./vis.png"):
+    """
+    在二维空间可视化聚类结果
+    
+    参数:
+        clusters: list, 聚类结果列表，每个元素是shape为(n,2)的numpy数组
+        colors: list, 颜色列表，默认None
+        labels: list, 标签列表，默认None
+        connection: bool, 是否显示连接关系，默认False
+        output_path: str, 输出图像路径，默认"./vis.png"
+    """
+    if not isinstance(clusters, list):
+        raise TypeError("clusters必须是列表类型")
+    for i, cluster in enumerate(clusters):
+        if not isinstance(cluster, np.ndarray):
+            raise TypeError(f"clusters[{i}]必须是numpy数组")
+        if cluster.shape[1] != 2:
+            raise ValueError(f"clusters[{i}]的维度必须是(n,2)")
 
     fig = plt.figure(figsize=(5, 5))
     if colors is None:
@@ -814,29 +1014,47 @@ def visualize_2d(clusters, colors=None, labels=None, connection=False):
         plt.scatter(cluster[:, 0], cluster[:, 1], c=color, label=label, alpha=0.9)
 
     if connection:
-        # assert len(clusters) == 2 and len(clusters[0]) == len(clusters[1])
-        for i in range(len(clusters[0])):
-            plt.plot(
-                [clusters[0][i, 0], clusters[1][i, 0]],
-                [clusters[0][i, 1], clusters[1][i, 1]],
-                c="k",
-                alpha=0.1,
-            )
-        for i in range(len(clusters[2])):
-            plt.plot(
-                [clusters[2][i, 0], clusters[3][i, 0]],
-                [clusters[2][i, 1], clusters[3][i, 1]],
-                c="k",
-                alpha=0.1,
-            )
+        # 添加长度检查，避免索引越界
+        if len(clusters) >= 4 and len(clusters[2]) == len(clusters[3]):
+            for i in range(len(clusters[2])):
+                plt.plot(
+                    [clusters[2][i, 0], clusters[3][i, 0]],
+                    [clusters[2][i, 1], clusters[3][i, 1]],
+                    c="k",
+                    alpha=0.1,
+                )
+        # 保留原始的前两个聚类的连接
+        if len(clusters) >= 2 and len(clusters[0]) == len(clusters[1]):
+            for i in range(len(clusters[0])):
+                plt.plot(
+                    [clusters[0][i, 0], clusters[1][i, 0]],
+                    [clusters[0][i, 1], clusters[1][i, 1]],
+                    c="k",
+                    alpha=0.1,
+                )
     
-    plt.savefig('./vis.png')
+    plt.savefig(output_path)
+    plt.close()  # 添加图形关闭，避免内存泄漏
 
-def visualize_2d_multi(clusters, colors=None, labels=None, connection=False,method="umap"):
-    assert isinstance(clusters, list)
-    for cluster in clusters:
-        assert isinstance(cluster, np.ndarray)
-        assert cluster.shape[1] == 2
+def visualize_2d_multi(clusters, colors=None, labels=None, connection=False, method="umap", output_path="./vis_{}.png"):
+    """
+    在二维空间可视化多个聚类结果
+    
+    参数:
+        clusters: list, 聚类结果列表，每个元素是shape为(n,2)的numpy数组
+        colors: list, 颜色列表，默认None
+        labels: list, 标签列表，默认None
+        connection: bool, 是否显示连接关系，默认False
+        method: str, 使用的降维方法，默认"umap"
+        output_path: str, 输出图像路径模板，默认"./vis_{}.png"
+    """
+    if not isinstance(clusters, list):
+        raise TypeError("clusters必须是列表类型")
+    for i, cluster in enumerate(clusters):
+        if not isinstance(cluster, np.ndarray):
+            raise TypeError(f"clusters[{i}]必须是numpy数组")
+        if cluster.shape[1] != 2:
+            raise ValueError(f"clusters[{i}]的维度必须是(n,2)")
 
     def my_norm(x):
         return x/np.linalg.norm(x, axis=-1, keepdims=True)
@@ -854,32 +1072,40 @@ def visualize_2d_multi(clusters, colors=None, labels=None, connection=False,meth
     for cluster, color, label in zip(clusters, colors, labels):
         plt.scatter(cluster[:, 0], cluster[:, 1], c=color, label=label, alpha=0.6)
 
-    if connection:
-        for i in range(len(clusters[0])):
-            plt.plot(
-                [clusters[0][i, 0], clusters[2][i, 0]],
-                [clusters[0][i, 1], clusters[2][i, 1]],
-                c="k",
-                alpha=0.1,
-            )
-        for i in range(len(clusters[1])):
-            plt.plot(
-                [clusters[1][i, 0], clusters[3][i, 0]],
-                [clusters[1][i, 1], clusters[3][i, 1]],
-                c="k",
-                alpha=0.1,
-            )
+    if connection and len(clusters) >= 4:
+        # 添加连接关系，确保索引安全
+        if len(clusters[0]) == len(clusters[2]):
+            for i in range(len(clusters[0])):
+                plt.plot(
+                    [clusters[0][i, 0], clusters[2][i, 0]],
+                    [clusters[0][i, 1], clusters[2][i, 1]],
+                    c="k",
+                    alpha=0.1,
+                )
+        if len(clusters[1]) == len(clusters[3]):
+            for i in range(len(clusters[1])):
+                plt.plot(
+                    [clusters[1][i, 0], clusters[3][i, 0]],
+                    [clusters[1][i, 1], clusters[3][i, 1]],
+                    c="k",
+                    alpha=0.1,
+                )
     
-    plt.savefig('./vis_{}.png'.format(method))
-    plt.close()
+    # 使用传入的路径模板
+    plt.savefig(output_path.format(method))
+    plt.close()  # 添加图形关闭，避免内存泄漏
     
-    
-    modality_gap1 = clusters[0].mean(axis=0) - clusters[2].mean(axis=0)
-    modality_gap2 = clusters[1].mean(axis=0) - clusters[3].mean(axis=0)
-    delta1 = np.linalg.norm(modality_gap1)
-    delta2 = np.linalg.norm(modality_gap2)
-    mean_delta = (delta1+delta2)/2
-    print('method: {}, gap1: {}, delta1: {}, gap2: {}, delta2: {}, mean delta: {}'.format(method, str(modality_gap1),str(delta1),str(modality_gap2),str(delta2),str(mean_delta)))
+    # 计算并打印modality gap
+    if len(clusters) >= 4:
+        try:
+            modality_gap1 = clusters[0].mean(axis=0) - clusters[2].mean(axis=0)
+            modality_gap2 = clusters[1].mean(axis=0) - clusters[3].mean(axis=0)
+            delta1 = np.linalg.norm(modality_gap1)
+            delta2 = np.linalg.norm(modality_gap2)
+            mean_delta = (delta1+delta2)/2
+            print(f'method: {method}, gap1: {modality_gap1}, delta1: {delta1}, gap2: {modality_gap2}, delta2: {delta2}, mean delta: {mean_delta}')
+        except Exception as e:
+            print(f"计算modality gap时出错: {str(e)}")
 
 
 def visualize_3d(clusters, colors=None, labels=None, connection=False):
@@ -906,19 +1132,37 @@ def visualize_3d(clusters, colors=None, labels=None, connection=False):
     plt.show()
 
 
-def dim_reduce(features, n_dim=2, methods=["svd", "pca", "tsne", "umap"]):
-    assert isinstance(features, np.ndarray)
+def dim_reduce(features, n_dim=2, methods=["svd", "pca", "tsne"]):
+    """
+    对特征进行降维处理
+    
+    参数:
+        features: np.ndarray, 需要降维的特征
+        n_dim: int, 降维后的维度，默认2
+        methods: list, 降维方法列表，支持'svd', 'pca', 'tsne'
+        
+    返回:
+        dict, 不同方法降维后的特征字典
+    """
+    if not isinstance(features, np.ndarray):
+        raise TypeError("features必须是numpy数组")
+    if n_dim < 1 or n_dim >= features.shape[1]:
+        raise ValueError(f"降维维度必须在1到{features.shape[1]}-1之间")
 
     features_reduce = {}
     for method in methods:
         if method == "svd":
             features_reduce[method] = svd(features, n_dim)
-        # if method == "umap":
-        #     projector = UMAP(n_neighbors=30,n_components=n_dim)
-        #     features_reduce[method] = projector.fit_transform(features)
-        else:
-            projector = eval(method.upper())(n_components=n_dim)
+        elif method == "pca":
+            from sklearn.decomposition import PCA
+            projector = PCA(n_components=n_dim)
             features_reduce[method] = projector.fit_transform(features)
+        elif method == "tsne":
+            from sklearn.manifold import TSNE
+            projector = TSNE(n_components=n_dim)
+            features_reduce[method] = projector.fit_transform(features)
+        else:
+            raise ValueError(f"不支持的降维方法: {method}")
     return features_reduce
 
 
@@ -926,51 +1170,98 @@ def reduce_and_visualize(
     image_features,
     text_features,
     n_dim=2,
-    methods=["svd", "pca", "tsne", "umap"],
+    methods=["svd", "pca", "tsne"],
     connection=False,
+    output_path="./vis.png"
 ):
-    assert isinstance(image_features, np.ndarray) and isinstance(
-        text_features, np.ndarray
-    )
-    assert n_dim in [2, 3]
+    """
+    降维并可视化图像和文本特征
+    
+    参数:
+        image_features: np.ndarray, 图像特征
+        text_features: np.ndarray, 文本特征
+        n_dim: int, 降维后的维度，支持2或3
+        methods: list, 降维方法列表
+        connection: bool, 是否显示连接关系
+        output_path: str, 输出图像路径前缀
+    """
+    if not isinstance(image_features, np.ndarray) or not isinstance(text_features, np.ndarray):
+        raise TypeError("image_features和text_features必须是numpy数组")
+    if n_dim not in [2, 3]:
+        raise ValueError("n_dim必须是2或3")
 
+    # 使用字典映射替代eval
+    visualize_funcs = {
+        2: visualize_2d,
+        3: visualize_3d
+    }
+    visualize_func = visualize_funcs.get(n_dim)
+    
     features = np.concatenate([image_features, text_features], axis=0)
     features_reduce = dim_reduce(features, n_dim=n_dim, methods=methods)
 
-    for i, method in enumerate(methods):
+    for method in methods:
         image_features_reduce = features_reduce[method][: len(image_features)]
         text_features_reduce = features_reduce[method][len(image_features) :]
         
-        eval(f"visualize_{n_dim}d")(
+        visualize_func(
             [image_features_reduce, text_features_reduce],
             colors=["r", "b"],
             connection=connection,
+            output_path=f"{output_path.replace('.png', '')}_{method}.png"
         )
-        # import pdb;pdb.set_trace()
 
 def reduce_and_visualize_multi(
     fea_list,
     n_dim=2,
-    methods=["svd", "pca", "tsne", "umap"],
+    methods=["svd", "pca", "tsne"],
     connection=False,
+    output_path="./vis.png"
 ):
+    """
+    降维并可视化多个特征集合
+    
+    参数:
+        fea_list: list, 特征列表，包含4个numpy数组
+        n_dim: int, 降维后的维度，默认2
+        methods: list, 降维方法列表
+        connection: bool, 是否显示连接关系
+        output_path: str, 输出图像路径前缀
+    """
+    if not isinstance(fea_list, list) or len(fea_list) != 4:
+        raise ValueError("fea_list必须是包含4个元素的列表")
+    if n_dim not in [2, 3]:
+        raise ValueError("n_dim必须是2或3")
+    
+    for i, feat in enumerate(fea_list):
+        if not isinstance(feat, np.ndarray):
+            raise TypeError(f"fea_list[{i}]必须是numpy数组")
 
-    assert n_dim in [2, 3]
+    # 使用字典映射替代eval
+    visualize_func = visualize_2d_multi if n_dim == 2 else None
+    if not visualize_func:
+        raise NotImplementedError(f"n_dim={n_dim}在多特征可视化中不支持")
 
     features = np.concatenate(fea_list, axis=0)
     features_reduce = dim_reduce(features, n_dim=n_dim, methods=methods)
 
-    for i, method in enumerate(methods):
-        image_NC_features_reduce = features_reduce[method][: fea_list[0].shape[0]]
-        image_AD_features_reduce = features_reduce[method][fea_list[0].shape[0] :fea_list[0].shape[0]+fea_list[1].shape[0]]
-        text_NC_features_reduce = features_reduce[method][fea_list[0].shape[0]+fea_list[1].shape[0] :fea_list[0].shape[0]+fea_list[1].shape[0]+fea_list[2].shape[0]]
-        text_AD_features_reduce = features_reduce[method][fea_list[0].shape[0]+fea_list[1].shape[0]+fea_list[2].shape[0]:]
+    # 计算索引边界，提高可读性
+    idx1 = fea_list[0].shape[0]
+    idx2 = idx1 + fea_list[1].shape[0]
+    idx3 = idx2 + fea_list[2].shape[0]
+    
+    for method in methods:
+        image_NC_features_reduce = features_reduce[method][:idx1]
+        image_AD_features_reduce = features_reduce[method][idx1:idx2]
+        text_NC_features_reduce = features_reduce[method][idx2:idx3]
+        text_AD_features_reduce = features_reduce[method][idx3:]
         
-        eval(f"visualize_{n_dim}d_multi")(
-            [image_NC_features_reduce, image_AD_features_reduce,text_NC_features_reduce,text_AD_features_reduce],
+        visualize_func(
+            [image_NC_features_reduce, image_AD_features_reduce, text_NC_features_reduce, text_AD_features_reduce],
             colors=["r", "b", "y", "g"],
             connection=connection,
             method=method,
+            output_path=f"{output_path.replace('.png', '')}_{method}.png"
         )
 
 

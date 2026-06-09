@@ -1,7 +1,7 @@
+from typing import List, Dict, Optional, Union, Tuple
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from typing import List, Dict, Optional, Union
 from medblip.mae_vit import CrossAttention
 
 class FeatureTokenizer(nn.Module):
@@ -9,7 +9,7 @@ class FeatureTokenizer(nn.Module):
     特征分词器：将表格特征转换为token嵌入
     处理两种类型的特征：数值型和类别型
     """
-    def __init__(self, num_numerical_features: int, categorical_cardinalities: List[int], d_token: int):
+    def __init__(self, num_numerical_features: int, categorical_cardinalities: List[int], d_token: int, use_positional_embedding: bool = True):
         super().__init__()
         
         # 数值特征处理
@@ -25,6 +25,12 @@ class FeatureTokenizer(nn.Module):
         self.num_numerical = num_numerical_features
         self.num_categorical = len(categorical_cardinalities)
         self.d_token = d_token
+        self.use_positional_embedding = use_positional_embedding
+        
+        # 添加位置嵌入
+        if self.use_positional_embedding:
+            total_features = num_numerical_features + len(categorical_cardinalities)
+            self.position_embedding = nn.Parameter(torch.randn(1, total_features, d_token))
     
     def forward(self, numerical_features: Optional[torch.Tensor] = None, 
                 categorical_features: Optional[torch.Tensor] = None):
@@ -46,6 +52,11 @@ class FeatureTokenizer(nn.Module):
         
         # 将所有token拼接起来
         tokens = torch.stack(tokens, dim=1)  # [B, num_features, d_token]
+        
+        # 添加位置嵌入
+        if self.use_positional_embedding:
+            tokens = tokens + self.position_embedding
+        
         return tokens
 
 class MultiHeadAttention(nn.Module):
@@ -104,6 +115,52 @@ class MultiHeadAttention(nn.Module):
         # 应用输出投影并添加残差连接
         output = self.W_o(attn_output) + residual  # [B, N, d_model]
         
+        return output, attn_probs
+
+class CrossAttention(nn.Module):
+    """
+    多头交叉注意力机制
+    """
+    def __init__(self, dim, num_heads=8, qkv_bias=False, qk_scale=None, attn_drop=0., proj_drop=0.):
+        super().__init__()
+        self.num_heads = num_heads
+        head_dim = dim // num_heads
+        # NOTE scale factor was wrong in my original version, can set manually to be compat with prev weights
+        self.scale = qk_scale or head_dim ** -0.5
+
+        self.q = nn.Linear(dim, dim, bias=qkv_bias)
+        self.k = nn.Linear(dim, dim, bias=qkv_bias)
+        self.v = nn.Linear(dim, dim, bias=qkv_bias)
+
+        self.attn_drop = nn.Dropout(attn_drop)
+        self.proj = nn.Linear(dim, dim)
+        self.proj_drop = nn.Dropout(proj_drop)
+        self.layer_norm = nn.LayerNorm(dim)
+
+    def forward(self, x, y):
+        B, N, C = x.shape
+        B, M, C = y.shape
+        
+        # 应用层归一化
+        residual = x
+        x = self.layer_norm(x)
+        y = self.layer_norm(y)
+        
+        q = self.q(x).reshape(B,N,self.num_heads, C // self.num_heads).permute(0,2,1,3)
+        k = self.k(y).reshape(B,M,self.num_heads, C // self.num_heads).permute(0,2,1,3)
+        v = self.v(y).reshape(B,M,self.num_heads, C // self.num_heads).permute(0,2,1,3)
+
+        attn = (q @ k.transpose(-2, -1)) * self.scale
+        attn = attn.softmax(dim=-1)
+        attn = self.attn_drop(attn)
+
+        x = (attn @ v).transpose(1, 2).reshape(B, N, C)
+        x = self.proj(x)
+        x = self.proj_drop(x)
+        
+        # 添加残差连接
+        output = x + residual
+        
         return output
 
 class FeedForward(nn.Module):
@@ -134,6 +191,26 @@ class FeedForward(nn.Module):
         
         return output
 
+class TransformerBlock(nn.Module):
+    """
+    Transformer块，包含自注意力、交叉注意力和前馈神经网络
+    """
+    def __init__(self, dim, num_heads, d_ff, dropout=0.0):
+        super().__init__()
+        self.self_attn = MultiHeadAttention(dim, num_heads, dropout)
+        self.cross_attn = CrossAttention(dim, num_heads, qkv_bias=True, attn_drop=dropout, proj_drop=dropout)
+        self.ffn = FeedForward(dim, d_ff, dropout)
+        
+    def forward(self, x, cross_emb=None, attention_mask=None):
+        # 自注意力
+        x, attn_probs = self.self_attn(x, attention_mask)
+        # 交叉注意力（如果提供了交叉嵌入）
+        if cross_emb is not None:
+            x = self.cross_attn(x, cross_emb)
+        # 前馈神经网络
+        x = self.ffn(x)
+        return x, attn_probs
+
 class TransformerEncoder(nn.Module):
     """
     Transformer编码器
@@ -142,20 +219,20 @@ class TransformerEncoder(nn.Module):
         super().__init__()
         
         self.layers = nn.ModuleList([
-            nn.ModuleList([
-                MultiHeadAttention(d_model, num_heads, dropout),
-                FeedForward(d_model, d_ff, dropout)
-            ]) for _ in range(num_layers)
+            TransformerBlock(d_model, num_heads, d_ff, dropout)
+            for _ in range(num_layers)
         ])
     
-    def forward(self, x: torch.Tensor, attention_mask: Optional[torch.Tensor] = None):
+    def forward(self, x: torch.Tensor, cross_emb: Optional[torch.Tensor] = None, attention_mask: Optional[torch.Tensor] = None):
         # x: [B, N, d_model]
+        # cross_emb: [B, M, d_model] (例如图像嵌入)
         
-        for attn, ffn in self.layers:
-            x = attn(x, attention_mask)
-            x = ffn(x)
+        all_attn_probs = []
+        for block in self.layers:
+            x, attn_probs = block(x, cross_emb, attention_mask)
+            all_attn_probs.append(attn_probs)
         
-        return x
+        return x, all_attn_probs
 
 class FTTransformer(nn.Module):
     """
@@ -170,7 +247,8 @@ class FTTransformer(nn.Module):
                  num_layers: int = 6,
                  dropout: float = 0.1,
                  use_cls_token: bool = True,
-                 output_dim: int = 768):
+                 output_dim: int = 768,
+                 use_positional_embedding: bool = True):
         super().__init__()
         
         if categorical_cardinalities is None:
@@ -180,7 +258,8 @@ class FTTransformer(nn.Module):
         self.feature_tokenizer = FeatureTokenizer(
             num_numerical_features=num_numerical_features,
             categorical_cardinalities=categorical_cardinalities,
-            d_token=d_token
+            d_token=d_token,
+            use_positional_embedding=use_positional_embedding
         )
         
         # 是否使用CLS token
@@ -206,7 +285,8 @@ class FTTransformer(nn.Module):
         )
     
     def forward(self, numerical_features: Optional[torch.Tensor] = None, 
-                categorical_features: Optional[torch.Tensor] = None):
+                categorical_features: Optional[torch.Tensor] = None,
+                cross_emb: Optional[torch.Tensor] = None):
         # 对特征进行分词
         tokens = self.feature_tokenizer(numerical_features, categorical_features)
         batch_size = tokens.shape[0]
@@ -217,7 +297,7 @@ class FTTransformer(nn.Module):
             tokens = torch.cat([cls_tokens, tokens], dim=1)
         
         # 通过Transformer编码器
-        encoder_output = self.encoder(tokens)
+        encoder_output, all_attn_probs = self.encoder(tokens, cross_emb)
         
         # 如果使用CLS token，只使用CLS token的输出
         if self.use_cls_token:
@@ -229,7 +309,7 @@ class FTTransformer(nn.Module):
         # 通过输出投影层
         output = self.output_projection(output)
         
-        return output
+        return output, all_attn_probs
 
 class TableFTTRestorer(nn.Module):
     """
@@ -241,15 +321,30 @@ class TableFTTRestorer(nn.Module):
                  categorical_cardinalities: List[int] = None,
                  hidden_dim: int = 768,
                  dropout: float = 0.1,
-                 num_cross_attn_heads: int = 8):
+                 num_cross_attn_heads: int = 8,
+                 use_positional_embedding: bool = True):
         super().__init__()
         
+        # 保存参数以便在forward中使用
+        self.num_numerical_features = num_numerical_features
+        self.categorical_cardinalities = categorical_cardinalities if categorical_cardinalities is not None else []
+        
+        # 检查是否有任何特征
+        has_numerical = num_numerical_features is not None and num_numerical_features > 0
+        has_categorical = categorical_cardinalities is not None and len(categorical_cardinalities) > 0
+        
+        if not (has_numerical or has_categorical):
+            raise ValueError("必须提供至少一种类型的特征：数值特征或类别特征")
+        
         # FT-Transformer用于表格特征处理
+        # 确保d_token与hidden_dim匹配，避免维度不匹配问题
         self.ft_transformer = FTTransformer(
             num_numerical_features=num_numerical_features,
-            categorical_cardinalities=categorical_cardinalities,
+            categorical_cardinalities=self.categorical_cardinalities,
+            d_token=hidden_dim,  # 使用与hidden_dim相同的d_token
             output_dim=hidden_dim,
-            dropout=dropout
+            dropout=dropout,
+            use_positional_embedding=use_positional_embedding
         )
         
         # 添加单向Cross-Attention层：与图像处理一致，表格特征作为query，图像特征作为key和value
@@ -273,13 +368,13 @@ class TableFTTRestorer(nn.Module):
             nn.Linear(hidden_dim, num_numerical_features)
         )
     
-    def forward(self, original_feat, masked_embeddings, image_embeddings, mask, compute_loss=True):
+    def forward(self, original_feat, masked_embeddings=None, image_embeddings=None, mask=None, compute_loss=True):
         """
         与SimpleTableRestorer兼容的接口，使用与图像处理相同的单向交叉注意力机制
         
         Args:
-            original_feat: 原始表格特征
-            masked_embeddings: 掩码后的表格嵌入
+            original_feat: 原始表格特征，可以是仅包含数值特征的张量，或包含数值和类别特征的元组
+            masked_embeddings: 掩码后的表格嵌入 (未使用，但保留接口兼容性)
             image_embeddings: 图像嵌入
             mask: 掩码位置
             compute_loss: 是否计算重构损失
@@ -288,45 +383,50 @@ class TableFTTRestorer(nn.Module):
             如果compute_loss为True: (loss, table_embedding)
             如果compute_loss为False: (0, table_embedding)
         """
-        # 使用FT-Transformer处理表格特征
-        # 这里假设original_feat是数值型特征
-        table_embedding = self.ft_transformer(numerical_features=original_feat)
+        # 输入验证
+        if original_feat is None:
+            raise ValueError("original_feat cannot be None")
         
-        # 准备用于Cross-Attention的特征格式
-        # 表格特征需要增加一个维度以匹配cross attention的输入格式 [B, N, C]
-        table_embedding_reshaped = table_embedding.unsqueeze(1)  # [B, 1, hidden_dim]
+        # 验证至少有一个特征被提供
+        has_numerical = self.num_numerical_features > 0
+        has_categorical = len(self.categorical_cardinalities) > 0
         
-        # 如果提供了图像嵌入，则进行跨模态交互
-        # 与图像处理一致，只进行单向注意力：表格特征关注图像特征
-        if image_embeddings is not None:
-            # 应用LayerNorm，与图像处理保持一致
-            normed_table_emb = self.norm1(table_embedding_reshaped)
-            normed_image_emb = self.norm2(image_embeddings)
-            
-            # 表格特征关注图像特征，与Block类中的实现一致
-            attended_table_emb = self.cross_attn(normed_table_emb, normed_image_emb)
-            
-            # 添加残差连接，与图像处理保持一致
-            enhanced_table_emb = table_embedding_reshaped + attended_table_emb
-            
-            # 获取增强后的表格特征 (去掉多余维度)
-            enhanced_table_emb = enhanced_table_emb.squeeze(1)  # [B, hidden_dim]
-            
-            # 如果不需要计算损失，可以直接返回
-            loss = torch.tensor(0.0, device=original_feat.device)
-            
-            if compute_loss:
-                # 重构表格特征
-                restored_feat = self.reconstruction_layer(enhanced_table_emb)
-                
-                # 计算损失
-                if mask is not None and mask.sum() > 0:
-                    loss = F.smooth_l1_loss(restored_feat[mask], original_feat[mask])
-            
-            # 返回增强后的表格嵌入，用于后续的多模态融合
-            return loss, enhanced_table_emb
+        if not (has_numerical or has_categorical):
+            raise ValueError("模型未配置任何特征处理能力")
+        
+        # 处理不同类型的输入
+        numerical_features = None
+        categorical_features = None
+        
+        # 判断输入是元组(数值特征, 类别特征)还是单个数值特征张量
+        if isinstance(original_feat, tuple) and len(original_feat) == 2:
+            numerical_features, categorical_features = original_feat
         else:
-            # 如果没有图像嵌入，则使用原始表格特征
-            # 如果不需要计算损失，可以直接返回
-            loss = torch.tensor(0.0, device=original_feat.device)
-            return loss, table_embedding
+            # 假设是数值型特征
+            numerical_features = original_feat
+        
+        # 使用FT-Transformer处理表格特征，并在每个Transformer块中进行跨模态交互
+        table_embedding, all_attn_probs = self.ft_transformer(
+            numerical_features=numerical_features,
+            categorical_features=categorical_features,
+            cross_emb=image_embeddings  # 将图像嵌入传递给FTTransformer
+        )
+        
+        # 如果提供了图像嵌入，表格嵌入已经通过每个Transformer块中的交叉注意力层与图像特征交互
+        # 不需要再进行额外的跨模态交互
+        
+        # 如果不需要计算损失，可以直接返回
+        loss = torch.tensor(0.0, device=original_feat.device if not isinstance(original_feat, tuple) else numerical_features.device)
+        
+        if compute_loss:
+            # 重构表格特征
+            restored_feat = self.reconstruction_layer(table_embedding)
+            
+            # 计算损失
+            if mask is not None and mask.sum() > 0:
+                # 确保我们只对数值特征计算损失
+                target_feat = numerical_features if isinstance(original_feat, tuple) else original_feat
+                loss = F.smooth_l1_loss(restored_feat[mask], target_feat[mask])
+        
+        # 返回处理后的表格嵌入和注意力权重，用于后续的多模态融合和可视化
+        return loss, table_embedding, all_attn_probs
